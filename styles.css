@@ -1640,14 +1640,14 @@ body {
   .projects-grid {
     display: grid !important;
     grid-template-columns: repeat(2, 1fr) !important;
-    gap: 0.75rem !important;
+    gap: 0.6rem !important;
     width: 100% !important;
     max-width: 100% !important;
     align-items: stretch !important;
   }
 
   .project-card {
-    padding: 0.65rem 0.5rem !important;
+    padding: 0.5rem 0.4rem !important;
     display: flex !important;
     flex-direction: column !important;
     justify-content: space-between !important;
@@ -1658,7 +1658,7 @@ body {
   }
 
   .project-card-image, .card-image-wrapper {
-    height: 110px !important;
+    height: 105px !important;
     width: 100% !important;
     object-fit: cover !important;
     border-radius: var(--radius-sm) !important;
@@ -1667,17 +1667,15 @@ body {
     flex-shrink: 0 !important;
   }
 
-  /* Force project image overlay options to be 100% visible and aligned */
+  /* Stack project image overlay options vertically so both options are 100% visible and never overlap/cut off */
   .card-overlay {
     position: absolute !important;
-    top: 0.3rem !important;
-    left: 0.3rem !important;
-    right: 0.3rem !important;
+    top: 0.25rem !important;
+    left: 0.25rem !important;
     display: flex !important;
-    flex-direction: row !important;
-    justify-content: space-between !important;
-    align-items: center !important;
-    gap: 0.2rem !important;
+    flex-direction: column !important;
+    align-items: flex-start !important;
+    gap: 0.15rem !important;
     z-index: 10 !important;
     opacity: 1 !important;
     visibility: visible !important;
@@ -1685,27 +1683,30 @@ body {
   }
 
   .card-overlay .badge, .cert-badge, .certificate-card .badge {
-    font-size: 0.58rem !important;
-    padding: 0.15rem 0.35rem !important;
-    max-width: 48% !important;
+    font-size: 0.54rem !important;
+    padding: 0.12rem 0.35rem !important;
+    max-width: 95% !important;
     white-space: nowrap !important;
     overflow: hidden !important;
     text-overflow: ellipsis !important;
     display: inline-flex !important;
     align-items: center !important;
-    gap: 0.2rem !important;
+    gap: 0.15rem !important;
     box-sizing: border-box !important;
+    background: rgba(15, 23, 42, 0.88) !important;
+    backdrop-filter: blur(4px) !important;
+    border-radius: 4px !important;
     pointer-events: auto !important;
   }
 
   .card-overlay .badge svg, .card-overlay .badge i, .card-overlay [data-lucide] {
-    width: 10px !important;
-    height: 10px !important;
+    width: 9px !important;
+    height: 9px !important;
     flex-shrink: 0 !important;
   }
 
   .card-body {
-    padding: 0.6rem 0.2rem 0.2rem 0.2rem !important;
+    padding: 0.35rem 0.2rem 0.2rem 0.2rem !important;
     display: flex !important;
     flex-direction: column !important;
     flex: 1 1 auto !important;
@@ -1713,29 +1714,30 @@ body {
   }
 
   .card-header-meta {
-    margin-bottom: 0.3rem !important;
+    margin-bottom: 0.2rem !important;
   }
 
   .project-card .card-title {
-    font-size: 0.84rem !important;
+    font-size: 0.8rem !important;
     font-weight: 700 !important;
-    line-height: 1.25 !important;
+    line-height: 1.2 !important;
+    margin-bottom: 0.15rem !important;
+    display: -webkit-box !important;
+    -webkit-line-clamp: 2 !important;
+    -webkit-box-orient: vertical !important;
+    overflow: hidden !important;
+    min-height: 1.9rem !important;
+  }
+
+  .project-card .card-desc, .project-card .card-text {
+    font-size: 0.72rem !important;
+    line-height: 1.3 !important;
     margin-bottom: 0.25rem !important;
     display: -webkit-box !important;
     -webkit-line-clamp: 2 !important;
     -webkit-box-orient: vertical !important;
     overflow: hidden !important;
-  }
-
-  .project-card .card-desc, .project-card .card-text {
-    font-size: 0.74rem !important;
-    line-height: 1.4 !important;
-    margin-bottom: 0.45rem !important;
-    display: -webkit-box !important;
-    -webkit-line-clamp: 3 !important;
-    -webkit-box-orient: vertical !important;
-    overflow: hidden !important;
-    height: auto !important;
+    height: 2.6em !important;
     color: var(--text-secondary) !important;
   }
 
@@ -1743,9 +1745,10 @@ body {
     display: flex !important;
     flex-wrap: nowrap !important;
     overflow-x: auto !important;
-    gap: 0.25rem !important;
-    margin-bottom: 0.5rem !important;
-    padding-bottom: 0.25rem !important;
+    gap: 0.2rem !important;
+    margin-bottom: 0.35rem !important;
+    padding-bottom: 0.15rem !important;
+    max-height: 24px !important;
     scrollbar-width: none !important;
     -webkit-overflow-scrolling: touch !important;
   }
@@ -1755,24 +1758,41 @@ body {
   }
 
   .tech-tags .tag {
-    font-size: 0.62rem !important;
-    padding: 0.15rem 0.35rem !important;
+    font-size: 0.6rem !important;
+    padding: 0.1rem 0.3rem !important;
     white-space: nowrap !important;
     flex-shrink: 0 !important;
+  }
+
+  .card-footer {
+    display: flex !important;
+    flex-direction: column !important;
+    gap: 0.25rem !important;
+    margin-top: auto !important;
+    width: 100% !important;
+    justify-content: flex-end !important;
+  }
+
+  .card-footer .btn {
+    width: 100% !important;
+    justify-content: center !important;
+    font-size: 0.72rem !important;
+    padding: 0.3rem 0.35rem !important;
+    min-height: 32px !important;
   }
 
   /* 2. Certificates Section Mobile Optimization */
   .certificates-grid {
     display: grid !important;
     grid-template-columns: repeat(2, 1fr) !important;
-    gap: 0.75rem !important;
+    gap: 0.6rem !important;
     width: 100% !important;
     max-width: 100% !important;
     align-items: stretch !important;
   }
 
   .certificate-card, .cert-card-item {
-    padding: 0.65rem 0.5rem !important;
+    padding: 0.5rem 0.4rem !important;
     width: 100% !important;
     box-sizing: border-box !important;
     display: flex !important;
@@ -1782,7 +1802,7 @@ body {
   }
 
   .cert-preview-wrapper, .cert-image-wrapper {
-    height: 110px !important;
+    height: 105px !important;
     width: 100% !important;
     object-fit: cover !important;
     position: relative !important;
@@ -1791,24 +1811,25 @@ body {
   }
 
   .certificate-card .card-title {
-    font-size: 0.84rem !important;
+    font-size: 0.8rem !important;
     font-weight: 700 !important;
-    line-height: 1.25 !important;
-    margin-bottom: 0.25rem !important;
+    line-height: 1.2 !important;
+    margin-bottom: 0.15rem !important;
     display: -webkit-box !important;
     -webkit-line-clamp: 2 !important;
     -webkit-box-orient: vertical !important;
     overflow: hidden !important;
+    min-height: 1.9rem !important;
   }
 
   .certificate-card .card-desc, .certificate-card p {
-    font-size: 0.74rem !important;
-    line-height: 1.4 !important;
+    font-size: 0.72rem !important;
+    line-height: 1.3 !important;
     display: -webkit-box !important;
-    -webkit-line-clamp: 3 !important;
+    -webkit-line-clamp: 2 !important;
     -webkit-box-orient: vertical !important;
     overflow: hidden !important;
-    height: auto !important;
+    height: 2.6em !important;
   }
 
   /* 3. Education ("Study Option") - Compact Sleek Mobile List */
