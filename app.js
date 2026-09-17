@@ -65,7 +65,7 @@ document.addEventListener('DOMContentLoaded', () => {
 
   // Projects Filter Buttons
   const filterBtns = document.querySelectorAll('.filter-btn');
-  const projectCards = document.querySelectorAll('.project-card');
+  const projectCards = document.querySelectorAll('.project-card:not(.cert-card-item)');
 
   filterBtns.forEach(btn => {
     btn.addEventListener('click', () => {
@@ -127,6 +127,48 @@ document.addEventListener('DOMContentLoaded', () => {
 
   if (searchInput) {
     searchInput.addEventListener('input', filterSkills);
+  }
+
+  // --- CERTIFICATES INTERACTIVE SEARCH & CATEGORY FILTERS ---
+  const certFilterBtns = document.querySelectorAll('.cert-filter-btn');
+  const certCards = document.querySelectorAll('.cert-card-item');
+  const certSearchInput = document.getElementById('cert-search-input');
+
+  let activeCertTab = 'all';
+
+  const filterCertificates = () => {
+    const query = certSearchInput ? certSearchInput.value.toLowerCase().trim() : '';
+
+    certCards.forEach(card => {
+      const category = card.dataset.category;
+      const textContent = card.textContent.toLowerCase();
+      const keywords = card.dataset.keywords || '';
+
+      const matchesTab = (activeCertTab === 'all' || category === activeCertTab);
+      const matchesSearch = !query || textContent.includes(query) || keywords.includes(query);
+
+      if (matchesTab && matchesSearch) {
+        card.style.display = 'flex';
+        setTimeout(() => { card.style.opacity = '1'; card.style.transform = 'translateY(0)'; }, 30);
+      } else {
+        card.style.opacity = '0';
+        card.style.transform = 'translateY(15px)';
+        setTimeout(() => { card.style.display = 'none'; }, 150);
+      }
+    });
+  };
+
+  certFilterBtns.forEach(tab => {
+    tab.addEventListener('click', () => {
+      certFilterBtns.forEach(t => t.classList.remove('active'));
+      tab.classList.add('active');
+      activeCertTab = tab.dataset.filter;
+      filterCertificates();
+    });
+  });
+
+  if (certSearchInput) {
+    certSearchInput.addEventListener('input', filterCertificates);
   }
 
   // Project Specifications Data for Modal
@@ -193,6 +235,101 @@ document.addEventListener('DOMContentLoaded', () => {
     }
   };
 
+  // Certificate Specifications Data for Modal
+  const certSpecs = {
+    cybercrime_internship: {
+      title: "Cybercrime Police Station Internship",
+      issuer: "Cybercrime Police Station, Visakhapatnam City",
+      pdf: "CERTIFICATES/CYBER CRIME INTERNSHIP CERTIFICATE PHANINDRA.pdf",
+      img: "assets/cert_cybercrime_internship.png",
+      recipient: "Marpu Phanindra",
+      description: "Official internship completion certificate issued by the Cybercrime Police Station for practical field training in cyber incident complaint processing, financial fraud logs, digital evidence handling, and 1930 helpline dispatch procedures.",
+      details: [
+        { label: "Issuing Organization", val: "Cybercrime Police Station" },
+        { label: "Verification Status", val: "Verified Official Police Station Certificate" },
+        { label: "Specialization", val: "Cyber Incident Handling & Digital Evidence" }
+      ]
+    },
+    cisco_jr_analyst: {
+      title: "Junior Cybersecurity Analyst Career Path",
+      issuer: "Cisco Networking Academy",
+      pdf: "CERTIFICATES/[23331A4732-1] Junior_Cybersecurity_Analyst_Career_Path_certificate_marpuphani00-gmail-com_d0aa353e-6d3c-4207-b53d-63a0f8f67bbc.pdf",
+      img: "assets/cert_cisco_jr_analyst.png",
+      recipient: "Marpu Phanindra (marpuphani00@gmail.com)",
+      description: "Career path certificate awarded by Cisco Networking Academy verifying mastery in Security Operations Center (SOC) procedures, vulnerability analysis, endpoint security, and network attack mitigation.",
+      details: [
+        { label: "Issuing Organization", val: "Cisco Networking Academy" },
+        { label: "Credential ID", val: "d0aa353e-6d3c-4207-b53d-63a0f8f67bbc" },
+        { label: "Specialization", val: "Junior Cybersecurity Analyst" }
+      ]
+    },
+    cisco_packet_tracer: {
+      title: "Getting Started with Cisco Packet Tracer",
+      issuer: "Cisco Networking Academy",
+      pdf: "CERTIFICATES/[23331A4732-2] Getting_Started_with_Cisco_Packet_Tracer_certificate_marpuphani00-gmail-com_7b298253-1069-4cd6-9fb9-e1781b99614a.pdf",
+      img: "assets/cert_cisco_packet_tracer.png",
+      recipient: "Marpu Phanindra (marpuphani00@gmail.com)",
+      description: "Verification certificate from Cisco Networking Academy demonstrating hands-on competence in constructing and simulating virtual router/switch network topologies using Packet Tracer.",
+      details: [
+        { label: "Issuing Organization", val: "Cisco Networking Academy" },
+        { label: "Credential ID", val: "7b298253-1069-4cd6-9fb9-e1781b99614a" },
+        { label: "Specialization", val: "Packet Tracer Network Simulation" }
+      ]
+    },
+    cisco_networking: {
+      title: "Exploring Networking with Cisco Packet Tracer",
+      issuer: "Cisco Networking Academy",
+      pdf: "CERTIFICATES/[23331A4732-3] Exploring_Networking_with_Cisco_Packet_Tracer_certificate_marpuphani00-gmail-com_702e4f0d-ee1c-46a5-bee5-b19211b7651c.pdf",
+      img: "assets/cert_cisco_networking.png",
+      recipient: "Marpu Phanindra (marpuphani00@gmail.com)",
+      description: "Certificate demonstrating advanced networking knowledge in TCP/IP protocol suites, IPv4/IPv6 subnetting, LAN switching, and dynamic packet routing.",
+      details: [
+        { label: "Issuing Organization", val: "Cisco Networking Academy" },
+        { label: "Credential ID", val: "702e4f0d-ee1c-46a5-bee5-b19211b7651c" },
+        { label: "Specialization", val: "Computer Networks & Protocols" }
+      ]
+    },
+    cybersecurity_netmaxin: {
+      title: "Introduction to Cybersecurity",
+      issuer: "Netmaxin Online Program",
+      pdf: "CERTIFICATES/Cyber Security.pdf",
+      img: "assets/cert_cybersecurity_netmaxin.png",
+      recipient: "Marpu Phanindra",
+      description: "Online program certificate in Cybersecurity covering network security fundamentals, threat surface auditing, system protection strategies, and digital hygiene.",
+      details: [
+        { label: "Issuing Organization", val: "Netmaxin Online Program" },
+        { label: "Verification Status", val: "Verified Certificate" },
+        { label: "Specialization", val: "Cybersecurity Fundamentals" }
+      ]
+    },
+    c_prog: {
+      title: "C Programming Certification",
+      issuer: "Netmaxin Academy",
+      pdf: "CERTIFICATES/C Programming.pdf",
+      img: "assets/cert_c_prog.png",
+      recipient: "Marpu Phanindra",
+      description: "Academy certification in C Programming covering core data structures, low-level memory pointers, dynamic allocation, and system algorithms.",
+      details: [
+        { label: "Issuing Organization", val: "Netmaxin Academy" },
+        { label: "Verification Status", val: "Verified Certificate" },
+        { label: "Specialization", val: "C System Programming" }
+      ]
+    },
+    aiml: {
+      title: "AI / ML Certification",
+      issuer: "Netmaxin Academy",
+      pdf: "CERTIFICATES/AIML.pdf",
+      img: "assets/cert_aiml.png",
+      recipient: "Marpu Phanindra",
+      description: "Certification in Artificial Intelligence and Machine Learning covering supervised model training, evaluation metrics, and neural network algorithms.",
+      details: [
+        { label: "Issuing Organization", val: "Netmaxin Academy" },
+        { label: "Verification Status", val: "Verified Certificate" },
+        { label: "Specialization", val: "Artificial Intelligence & Machine Learning" }
+      ]
+    }
+  };
+
   // Modal Control
   const modal = document.getElementById('project-modal');
   const closeModalBtn = document.getElementById('close-modal-btn');
@@ -248,8 +385,61 @@ document.addEventListener('DOMContentLoaded', () => {
     }
   };
 
+  const openCertModal = (key) => {
+    const cert = certSpecs[key];
+    if (!cert) return;
+
+    modalContainer.innerHTML = `
+      <div style="text-align: center; margin-bottom: 1.5rem;">
+        <img src="${cert.img}" alt="${cert.title}" style="max-height: 480px; width: auto; max-width: 100%; border-radius: 8px; border: 1px solid var(--border-glow); box-shadow: 0 10px 30px rgba(0,0,0,0.6);">
+      </div>
+      <h2 class="modal-h2">${cert.title}</h2>
+      <div class="modal-subtitle"><i data-lucide="award"></i> Issued by ${cert.issuer}</div>
+      <p class="modal-desc">${cert.description}</p>
+      
+      <div class="modal-feature-list" style="margin-bottom: 1.8rem;">
+        ${cert.details.map(d => `
+          <div class="feature-item">
+            <h4 style="color: var(--accent-cyan); font-size: 0.85rem;">${d.label}</h4>
+            <p style="font-weight: 600; color: #fff;">${d.val}</p>
+          </div>
+        `).join('')}
+      </div>
+
+      <div style="display: flex; gap: 1rem; flex-wrap: wrap;">
+        <a href="${cert.pdf}" target="_blank" class="btn btn-primary btn-lg">
+          <i data-lucide="file-text"></i> Open Full PDF Document
+        </a>
+        <button class="btn btn-glass copy-cert-pdf-path" data-path="${cert.pdf}">
+          <i data-lucide="copy"></i> Copy File Path
+        </button>
+      </div>
+    `;
+
+    if (window.lucide) window.lucide.createIcons();
+
+    modal.classList.add('active');
+
+    const copyBtn = modalContainer.querySelector('.copy-cert-pdf-path');
+    if (copyBtn) {
+      copyBtn.addEventListener('click', () => {
+        navigator.clipboard.writeText(cert.pdf);
+        copyBtn.innerHTML = `<i data-lucide="check"></i> Copied Path!`;
+        if (window.lucide) window.lucide.createIcons();
+        setTimeout(() => {
+          copyBtn.innerHTML = `<i data-lucide="copy"></i> Copy File Path`;
+          if (window.lucide) window.lucide.createIcons();
+        }, 2000);
+      });
+    }
+  };
+
   document.querySelectorAll('.open-modal-btn').forEach(btn => {
     btn.addEventListener('click', () => openModal(btn.dataset.project));
+  });
+
+  document.querySelectorAll('.open-cert-modal-btn').forEach(btn => {
+    btn.addEventListener('click', () => openCertModal(btn.dataset.cert));
   });
 
   if (closeModalBtn) {
@@ -289,10 +479,10 @@ document.addEventListener('DOMContentLoaded', () => {
             <span class="term-cyan">Available Commands:</span><br>
             • <span class="term-green">resume</span> - Display summary profile of Marpu Phanindra<br>
             • <span class="term-green">list</span> - List engineering projects<br>
+            • <span class="term-green">certifications</span> - Display all 7 verified certificates<br>
             • <span class="term-green">skills</span> - Output technical skills matrix<br>
-            • <span class="term-green">certifications</span> - Display verified credentials<br>
             • <span class="term-green">contact</span> - Show email, phone & location<br>
-            • <span class="term-green">info [wificsi | cybercrime | shuttletrack | autopentest]</span> - Inspect project<br>
+            • <span class="term-green">info [cybercrime | shuttletrack | wificsi | autopentest]</span> - Inspect project<br>
             • <span class="term-green">clear</span> - Clear console output
           </div>
         `);
@@ -339,16 +529,17 @@ document.addEventListener('DOMContentLoaded', () => {
 
       case 'certifications':
       case 'certs':
+      case 'certificates':
         printLine(`
           <div style="margin-top: 0.3rem;">
-            <span class="term-cyan">Verified Certifications:</span><br>
-            • Cybercrime Internship - <span class="term-green">Cybercrime Police Station</span><br>
-            • Cybersecurity Essentials - <span class="term-green">Cisco Networking Academy</span><br>
-            • Cisco Packet Tracer - <span class="term-green">Cisco Networking Academy</span><br>
-            • Exploring Networking - <span class="term-green">Cisco Networking Academy</span><br>
-            • Introduction to Cybersecurity - <span class="term-yellow">Netmaxin Online Program</span><br>
-            • C Programming - <span class="term-yellow">Netmaxin Academy</span><br>
-            • AI / ML - <span class="term-purple">Netmaxin Academy</span>
+            <span class="term-cyan">All 7 Verified PDF Certificates:</span><br>
+            [1] <span class="term-green">Cybercrime Police Station Internship</span> (Cybercrime Police Station)<br>
+            [2] <span class="term-purple">Junior Cybersecurity Analyst Career Path</span> (Cisco Networking Academy)<br>
+            [3] <span class="term-purple">Getting Started with Cisco Packet Tracer</span> (Cisco Networking Academy)<br>
+            [4] <span class="term-purple">Exploring Networking with Cisco Packet Tracer</span> (Cisco Networking Academy)<br>
+            [5] <span class="term-yellow">Introduction to Cybersecurity</span> (Netmaxin Online Program)<br>
+            [6] <span class="term-yellow">C Programming Certification</span> (Netmaxin Academy)<br>
+            [7] <span class="term-yellow">AI / ML Certification</span> (Netmaxin Academy)
           </div>
         `);
         break;

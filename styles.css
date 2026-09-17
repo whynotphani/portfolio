@@ -562,7 +562,7 @@ body {
   flex-wrap: wrap;
 }
 
-/* --- PROFESSIONAL TECHNICAL SKILLS MATRIX STYLES --- */
+/* PROFESSIONAL TECHNICAL SKILLS MATRIX STYLES */
 .skills-metrics-bar {
   display: grid;
   grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
@@ -643,7 +643,7 @@ body {
   width: 18px;
 }
 
-#skills-search-input {
+#skills-search-input, #cert-search-input {
   width: 100%;
   padding: 0.75rem 1rem 0.75rem 2.8rem;
   background: rgba(15, 23, 42, 0.9);
@@ -656,7 +656,7 @@ body {
   transition: var(--transition-fast);
 }
 
-#skills-search-input:focus {
+#skills-search-input:focus, #cert-search-input:focus {
   border-color: var(--accent-cyan);
   box-shadow: 0 0 20px rgba(56, 189, 248, 0.2);
 }
@@ -668,7 +668,7 @@ body {
   flex-wrap: wrap;
 }
 
-.skill-tab-btn {
+.skill-tab-btn, .cert-filter-btn {
   padding: 0.5rem 1.1rem;
   border-radius: 30px;
   background: rgba(255, 255, 255, 0.04);
@@ -680,7 +680,8 @@ body {
   transition: var(--transition-fast);
 }
 
-.skill-tab-btn:hover, .skill-tab-btn.active {
+.skill-tab-btn:hover, .skill-tab-btn.active,
+.cert-filter-btn:hover, .cert-filter-btn.active {
   background: var(--accent-cyan);
   color: #040508;
   border-color: var(--accent-cyan);
@@ -783,41 +784,20 @@ body {
   font-weight: 600;
 }
 
-/* Certifications Grid */
-.certifications-grid {
-  display: grid;
-  grid-template-columns: repeat(auto-fill, minmax(260px, 1fr));
-  gap: 1.4rem;
+/* Certificate Cards & Image Thumbnail Customizations */
+.cert-image-wrapper {
+  background: #020408;
+  height: 230px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  border-bottom: 1px solid var(--border-color);
 }
 
-.cert-card {
-  background: var(--bg-card);
-  border: 1px solid var(--border-color);
-  border-radius: var(--radius-md);
-  padding: 1.4rem;
-  backdrop-filter: blur(12px);
-  transition: var(--transition-fast);
-}
-
-.cert-card:hover {
-  border-color: var(--accent-cyan);
-  transform: translateY(-3px);
-}
-
-.cert-icon {
-  font-size: 1.5rem;
-  margin-bottom: 0.8rem;
-}
-
-.cert-card h4 {
-  font-size: 1rem;
-  font-weight: 700;
-  margin-bottom: 0.25rem;
-}
-
-.cert-card p {
-  font-size: 0.85rem;
-  color: var(--text-muted);
+.cert-img {
+  object-fit: contain;
+  padding: 0.75rem;
+  background: #040710;
 }
 
 /* Projects Showcase */
@@ -1159,7 +1139,7 @@ body {
   background: #0b0f19;
   border: 1px solid var(--border-glow);
   border-radius: var(--radius-lg);
-  max-width: 800px;
+  max-width: 850px;
   width: 100%;
   max-height: 90vh;
   overflow-y: auto;

@@ -32,7 +32,7 @@
         <a href="#education" class="nav-link">Education</a>
         <a href="#projects" class="nav-link">Projects</a>
         <a href="#skills" class="nav-link">Skills</a>
-        <a href="#certifications" class="nav-link">Certifications</a>
+        <a href="#certifications" class="nav-link">Certificates</a>
         <a href="#terminal" class="nav-link">CLI Console</a>
       </nav>
 
@@ -101,8 +101,8 @@
           <a href="#projects" class="btn btn-gradient btn-lg">
             <i data-lucide="folder-git-2"></i> View Projects
           </a>
-          <a href="#experience" class="btn btn-glass btn-lg">
-            <i data-lucide="briefcase"></i> Experience & Resume
+          <a href="#certifications" class="btn btn-glass btn-lg">
+            <i data-lucide="award"></i> View Certificates
           </a>
         </div>
       </div>
@@ -657,57 +657,299 @@
       </div>
     </section>
 
-    <!-- Certifications Section -->
+    <!-- Visual Certificates Showcase Section (Same as Projects View) -->
     <section id="certifications" class="section-padding bg-darker">
       <div class="container">
         <div class="section-header text-center">
           <div class="section-tag"><i data-lucide="award"></i> Verified Credentials</div>
-          <h2 class="section-title">Certifications <span class="gradient-text">& Training</span></h2>
-          <p class="section-subtitle">Formal training in Cybersecurity, Networking, and Programming.</p>
+          <h2 class="section-title">Official <span class="gradient-text">Certificates & Credentials</span></h2>
+          <p class="section-subtitle">Authentic certificates issued by Cybercrime Police Station, Cisco Networking Academy, and Netmaxin Academy.</p>
         </div>
 
-        <div class="certifications-grid">
-          <div class="cert-card">
-            <div class="cert-icon text-cyan"><i data-lucide="shield-check"></i></div>
-            <h4>Cybercrime Internship</h4>
-            <p>Cybercrime Police Station</p>
+        <!-- Certificate Filter Controls & Search -->
+        <div class="skills-controls">
+          <div class="skills-search-wrapper">
+            <i data-lucide="search" class="search-icon"></i>
+            <input type="text" id="cert-search-input" placeholder="Search certificates (e.g., Cybercrime, Cisco, Packet Tracer, AI)..." autocomplete="off">
           </div>
 
-          <div class="cert-card">
-            <div class="cert-icon text-green"><i data-lucide="lock"></i></div>
-            <h4>Cybersecurity Essentials</h4>
-            <p>Cisco Networking Academy</p>
+          <div class="filter-bar">
+            <button class="cert-filter-btn active" data-filter="all">All Certificates</button>
+            <button class="cert-filter-btn" data-filter="police">Cybercrime Police</button>
+            <button class="cert-filter-btn" data-filter="cisco">Cisco Academy</button>
+            <button class="cert-filter-btn" data-filter="netmaxin">Netmaxin Academy</button>
           </div>
+        </div>
 
-          <div class="cert-card">
-            <div class="cert-icon text-cyan"><i data-lucide="network"></i></div>
-            <h4>Cisco Packet Tracer</h4>
-            <p>Cisco Networking Academy</p>
-          </div>
+        <!-- Certificates Cards Grid (Project Style View) -->
+        <div class="projects-grid" id="certificates-grid">
+          
+          <!-- Cert 1: Cybercrime Police Station Internship -->
+          <article class="project-card cert-card-item" data-category="police" data-keywords="cybercrime police station internship visakhapatnam case reporting">
+            <div class="card-image-wrapper cert-image-wrapper">
+              <img src="assets/cert_cybercrime_internship.png" alt="Cybercrime Police Station Internship Certificate" class="card-img cert-img">
+              <div class="card-overlay">
+                <span class="badge badge-cyan"><i data-lucide="shield-check"></i> Police Verified</span>
+                <span class="badge badge-dark">PDF Certificate</span>
+              </div>
+            </div>
 
-          <div class="cert-card">
-            <div class="cert-icon text-purple"><i data-lucide="globe"></i></div>
-            <h4>Exploring Networking</h4>
-            <p>Cisco Networking Academy</p>
-          </div>
+            <div class="card-body">
+              <div class="card-header-meta">
+                <h3 class="card-title">Cybercrime Police Station Internship</h3>
+                <span class="repo-tag"><i data-lucide="building"></i> Cybercrime Police Station</span>
+              </div>
 
-          <div class="cert-card">
-            <div class="cert-icon text-cyan"><i data-lucide="shield"></i></div>
-            <h4>Introduction to Cybersecurity</h4>
-            <p>Netmaxin Online Program</p>
-          </div>
+              <p class="card-text">
+                Practical internship certificate awarded by the Cybercrime Police Station for specialized training in cyber incident reporting, evidence evaluation, and digital investigation workflows.
+              </p>
 
-          <div class="cert-card">
-            <div class="cert-icon text-green"><i data-lucide="code"></i></div>
-            <h4>C Programming</h4>
-            <p>Netmaxin Academy</p>
-          </div>
+              <div class="tech-tags">
+                <span class="tag">Police Internship</span>
+                <span class="tag">Cybercrime Investigation</span>
+                <span class="tag">Case Evaluation</span>
+                <span class="tag">1930 Helpline</span>
+              </div>
 
-          <div class="cert-card">
-            <div class="cert-icon text-purple"><i data-lucide="cpu"></i></div>
-            <h4>AI / ML Certification</h4>
-            <p>Netmaxin Academy</p>
-          </div>
+              <div class="card-footer">
+                <button class="btn btn-sm btn-primary open-cert-modal-btn" data-cert="cybercrime_internship">
+                  <i data-lucide="eye"></i> Inspect Certificate
+                </button>
+                <a href="CERTIFICATES/CYBER CRIME INTERNSHIP CERTIFICATE PHANINDRA.pdf" target="_blank" class="btn btn-sm btn-outline">
+                  <i data-lucide="file-text"></i> Open PDF
+                </a>
+              </div>
+            </div>
+          </article>
+
+          <!-- Cert 2: Cisco Junior Cybersecurity Analyst Career Path -->
+          <article class="project-card cert-card-item" data-category="cisco" data-keywords="cisco junior cybersecurity analyst career path cisco networking academy analyst">
+            <div class="card-image-wrapper cert-image-wrapper">
+              <img src="assets/cert_cisco_jr_analyst.png" alt="Cisco Junior Cybersecurity Analyst Career Path Certificate" class="card-img cert-img">
+              <div class="card-overlay">
+                <span class="badge badge-purple"><i data-lucide="lock"></i> Cisco Certified</span>
+                <span class="badge badge-dark">PDF Certificate</span>
+              </div>
+            </div>
+
+            <div class="card-body">
+              <div class="card-header-meta">
+                <h3 class="card-title">Junior Cybersecurity Analyst Career Path</h3>
+                <span class="repo-tag"><i data-lucide="award"></i> Cisco Networking Academy</span>
+              </div>
+
+              <p class="card-text">
+                Comprehensive career path certification covering SOC operations, threat intelligence, network vulnerability analysis, and incident mitigation techniques.
+              </p>
+
+              <div class="tech-tags">
+                <span class="tag">Cisco Networking Academy</span>
+                <span class="tag">Cybersecurity Analyst</span>
+                <span class="tag">SOC Auditing</span>
+                <span class="tag">Threat Mitigation</span>
+              </div>
+
+              <div class="card-footer">
+                <button class="btn btn-sm btn-primary open-cert-modal-btn" data-cert="cisco_jr_analyst">
+                  <i data-lucide="eye"></i> Inspect Certificate
+                </button>
+                <a href="CERTIFICATES/[23331A4732-1] Junior_Cybersecurity_Analyst_Career_Path_certificate_marpuphani00-gmail-com_d0aa353e-6d3c-4207-b53d-63a0f8f67bbc.pdf" target="_blank" class="btn btn-sm btn-outline">
+                  <i data-lucide="file-text"></i> Open PDF
+                </a>
+              </div>
+            </div>
+          </article>
+
+          <!-- Cert 3: Getting Started with Cisco Packet Tracer -->
+          <article class="project-card cert-card-item" data-category="cisco" data-keywords="getting started cisco packet tracer cisco networking academy topology simulation">
+            <div class="card-image-wrapper cert-image-wrapper">
+              <img src="assets/cert_cisco_packet_tracer.png" alt="Getting Started with Cisco Packet Tracer Certificate" class="card-img cert-img">
+              <div class="card-overlay">
+                <span class="badge badge-emerald"><i data-lucide="network"></i> Cisco Certified</span>
+                <span class="badge badge-dark">PDF Certificate</span>
+              </div>
+            </div>
+
+            <div class="card-body">
+              <div class="card-header-meta">
+                <h3 class="card-title">Getting Started with Cisco Packet Tracer</h3>
+                <span class="repo-tag"><i data-lucide="award"></i> Cisco Networking Academy</span>
+              </div>
+
+              <p class="card-text">
+                Certification verifying hands-on competence in building, configuring, and simulating virtual computer network topologies and packet routing using Cisco Packet Tracer.
+              </p>
+
+              <div class="tech-tags">
+                <span class="tag">Packet Tracer</span>
+                <span class="tag">Network Topology</span>
+                <span class="tag">Router/Switch Config</span>
+                <span class="tag">Cisco Simulation</span>
+              </div>
+
+              <div class="card-footer">
+                <button class="btn btn-sm btn-primary open-cert-modal-btn" data-cert="cisco_packet_tracer">
+                  <i data-lucide="eye"></i> Inspect Certificate
+                </button>
+                <a href="CERTIFICATES/[23331A4732-2] Getting_Started_with_Cisco_Packet_Tracer_certificate_marpuphani00-gmail-com_7b298253-1069-4cd6-9fb9-e1781b99614a.pdf" target="_blank" class="btn btn-sm btn-outline">
+                  <i data-lucide="file-text"></i> Open PDF
+                </a>
+              </div>
+            </div>
+          </article>
+
+          <!-- Cert 4: Exploring Networking with Cisco Packet Tracer -->
+          <article class="project-card cert-card-item" data-category="cisco" data-keywords="exploring networking cisco packet tracer network protocols tcp ip subnetting">
+            <div class="card-image-wrapper cert-image-wrapper">
+              <img src="assets/cert_cisco_networking.png" alt="Exploring Networking with Cisco Packet Tracer Certificate" class="card-img cert-img">
+              <div class="card-overlay">
+                <span class="badge badge-purple"><i data-lucide="globe"></i> Cisco Certified</span>
+                <span class="badge badge-dark">PDF Certificate</span>
+              </div>
+            </div>
+
+            <div class="card-body">
+              <div class="card-header-meta">
+                <h3 class="card-title">Exploring Networking with Cisco Packet Tracer</h3>
+                <span class="repo-tag"><i data-lucide="award"></i> Cisco Networking Academy</span>
+              </div>
+
+              <p class="card-text">
+                Advanced network configuration certificate demonstrating mastery of TCP/IP protocol stacks, IPv4/IPv6 subnetting, LAN switching, and network traffic verification.
+              </p>
+
+              <div class="tech-tags">
+                <span class="tag">Networking Fundamentals</span>
+                <span class="tag">TCP/IP Protocol</span>
+                <span class="tag">IPv4/IPv6 Subnetting</span>
+                <span class="tag">Packet Routing</span>
+              </div>
+
+              <div class="card-footer">
+                <button class="btn btn-sm btn-primary open-cert-modal-btn" data-cert="cisco_networking">
+                  <i data-lucide="eye"></i> Inspect Certificate
+                </button>
+                <a href="CERTIFICATES/[23331A4732-3] Exploring_Networking_with_Cisco_Packet_Tracer_certificate_marpuphani00-gmail-com_702e4f0d-ee1c-46a5-bee5-b19211b7651c.pdf" target="_blank" class="btn btn-sm btn-outline">
+                  <i data-lucide="file-text"></i> Open PDF
+                </a>
+              </div>
+            </div>
+          </article>
+
+          <!-- Cert 5: Introduction to Cybersecurity (Netmaxin) -->
+          <article class="project-card cert-card-item" data-category="netmaxin" data-keywords="introduction to cybersecurity netmaxin online program security auditing">
+            <div class="card-image-wrapper cert-image-wrapper">
+              <img src="assets/cert_cybersecurity_netmaxin.png" alt="Introduction to Cybersecurity Certificate" class="card-img cert-img">
+              <div class="card-overlay">
+                <span class="badge badge-cyan"><i data-lucide="shield"></i> Netmaxin Academy</span>
+                <span class="badge badge-dark">PDF Certificate</span>
+              </div>
+            </div>
+
+            <div class="card-body">
+              <div class="card-header-meta">
+                <h3 class="card-title">Introduction to Cybersecurity</h3>
+                <span class="repo-tag"><i data-lucide="book"></i> Netmaxin Online Program</span>
+              </div>
+
+              <p class="card-text">
+                Certified training covering core principles of cybersecurity defense, threat vectors, system hardening, and web application security auditing.
+              </p>
+
+              <div class="tech-tags">
+                <span class="tag">Cybersecurity Defenses</span>
+                <span class="tag">Threat Vectors</span>
+                <span class="tag">System Hardening</span>
+                <span class="tag">Netmaxin Program</span>
+              </div>
+
+              <div class="card-footer">
+                <button class="btn btn-sm btn-primary open-cert-modal-btn" data-cert="cybersecurity_netmaxin">
+                  <i data-lucide="eye"></i> Inspect Certificate
+                </button>
+                <a href="CERTIFICATES/Cyber Security.pdf" target="_blank" class="btn btn-sm btn-outline">
+                  <i data-lucide="file-text"></i> Open PDF
+                </a>
+              </div>
+            </div>
+          </article>
+
+          <!-- Cert 6: C Programming Certification -->
+          <article class="project-card cert-card-item" data-category="netmaxin" data-keywords="c programming netmaxin academy memory data structures pointers">
+            <div class="card-image-wrapper cert-image-wrapper">
+              <img src="assets/cert_c_prog.png" alt="C Programming Certification" class="card-img cert-img">
+              <div class="card-overlay">
+                <span class="badge badge-emerald"><i data-lucide="code"></i> Netmaxin Academy</span>
+                <span class="badge badge-dark">PDF Certificate</span>
+              </div>
+            </div>
+
+            <div class="card-body">
+              <div class="card-header-meta">
+                <h3 class="card-title">C Programming Certification</h3>
+                <span class="repo-tag"><i data-lucide="book"></i> Netmaxin Academy</span>
+              </div>
+
+              <p class="card-text">
+                Formal certification in C programming language covering low-level memory management, pointers, dynamic memory allocation, and algorithmic problem solving.
+              </p>
+
+              <div class="tech-tags">
+                <span class="tag">C Programming</span>
+                <span class="tag">Memory Pointers</span>
+                <span class="tag">Data Structures</span>
+                <span class="tag">Netmaxin Academy</span>
+              </div>
+
+              <div class="card-footer">
+                <button class="btn btn-sm btn-primary open-cert-modal-btn" data-cert="c_prog">
+                  <i data-lucide="eye"></i> Inspect Certificate
+                </button>
+                <a href="CERTIFICATES/C Programming.pdf" target="_blank" class="btn btn-sm btn-outline">
+                  <i data-lucide="file-text"></i> Open PDF
+                </a>
+              </div>
+            </div>
+          </article>
+
+          <!-- Cert 7: AI / ML Certification -->
+          <article class="project-card cert-card-item" data-category="netmaxin" data-keywords="ai ml artificial intelligence machine learning netmaxin academy neural models">
+            <div class="card-image-wrapper cert-image-wrapper">
+              <img src="assets/cert_aiml.png" alt="AI / ML Certification" class="card-img cert-img">
+              <div class="card-overlay">
+                <span class="badge badge-purple"><i data-lucide="cpu"></i> Netmaxin Academy</span>
+                <span class="badge badge-dark">PDF Certificate</span>
+              </div>
+            </div>
+
+            <div class="card-body">
+              <div class="card-header-meta">
+                <h3 class="card-title">AI / ML Certification</h3>
+                <span class="repo-tag"><i data-lucide="book"></i> Netmaxin Academy</span>
+              </div>
+
+              <p class="card-text">
+                Certification in Artificial Intelligence and Machine Learning fundamentals covering supervised model training, evaluation metrics, and neural network concepts.
+              </p>
+
+              <div class="tech-tags">
+                <span class="tag">Artificial Intelligence</span>
+                <span class="tag">Machine Learning</span>
+                <span class="tag">Python AI</span>
+                <span class="tag">Netmaxin Academy</span>
+              </div>
+
+              <div class="card-footer">
+                <button class="btn btn-sm btn-primary open-cert-modal-btn" data-cert="aiml">
+                  <i data-lucide="eye"></i> Inspect Certificate
+                </button>
+                <a href="CERTIFICATES/AIML.pdf" target="_blank" class="btn btn-sm btn-outline">
+                  <i data-lucide="file-text"></i> Open PDF
+                </a>
+              </div>
+            </div>
+          </article>
+
         </div>
       </div>
     </section>
@@ -743,7 +985,7 @@
             <button class="preset-btn" data-cmd="help">help</button>
             <button class="preset-btn" data-cmd="resume">resume summary</button>
             <button class="preset-btn" data-cmd="list">list projects</button>
-            <button class="preset-btn" data-cmd="certifications">certifications</button>
+            <button class="preset-btn" data-cmd="certifications">list certificates</button>
             <button class="preset-btn" data-cmd="skills">skills matrix</button>
             <button class="preset-btn" data-cmd="contact">contact details</button>
           </div>
