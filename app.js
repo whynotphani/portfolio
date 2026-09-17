@@ -454,11 +454,14 @@ document.addEventListener('DOMContentLoaded', () => {
   const openFullPortfolioModal = () => {
     modalContainer.innerHTML = `
       <div class="resume-actions-bar">
-        <button class="btn btn-gradient btn-sm" id="print-resume-btn">
-          <i data-lucide="printer"></i> Print / Download Portfolio PDF
+        <a href="Resume/RESUME.pdf" download="Marpu_Phanindra_Resume.pdf" target="_blank" class="btn btn-gradient btn-sm" id="download-official-resume-btn">
+          <i data-lucide="download"></i> Download Official Resume (PDF)
+        </a>
+        <button class="btn btn-outline btn-sm" id="print-resume-btn">
+          <i data-lucide="printer"></i> Print / Save Document
         </button>
         <button class="btn btn-outline btn-sm" id="copy-resume-text-btn">
-          <i data-lucide="copy"></i> Copy Portfolio Text
+          <i data-lucide="copy"></i> Copy Text
         </button>
       </div>
 
