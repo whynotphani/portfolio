@@ -1510,31 +1510,152 @@ body {
 }
 
 @media (max-width: 768px) {
-  .hero-section { padding: 7rem 1rem 3rem 1rem; }
-  .hero-title { font-size: 2.2rem; }
-  .hero-role-title { font-size: 0.88rem; }
-  .hero-description { font-size: 0.98rem; }
-  .hero-stats { flex-direction: column; gap: 0.8rem; padding: 1rem; }
+  .hero-section { padding: 6.5rem 0.8rem 2.5rem 0.8rem; }
+  .hero-title { font-size: 2rem; }
+  .hero-role-title { font-size: 0.8rem; }
+  .hero-description { font-size: 0.9rem; }
+  
+  .hero-stats {
+    display: grid !important;
+    grid-template-columns: repeat(2, 1fr) !important;
+    gap: 0.6rem !important;
+    padding: 0.8rem !important;
+  }
   .stat-divider { display: none; }
+  .hero-chips {
+    display: grid !important;
+    grid-template-columns: repeat(2, 1fr) !important;
+    gap: 0.4rem !important;
+  }
+  .hero-chips .chip { font-size: 0.76rem; padding: 0.35rem 0.6rem; }
+  
   .hero-cta-group { flex-direction: column; width: 100%; }
   .hero-cta-group .btn { width: 100%; justify-content: center; }
 
-  .section-padding { padding: 3.5rem 1rem; }
-  .section-title { font-size: 1.8rem; }
+  .section-padding { padding: 2.8rem 0.8rem; }
+  .section-title { font-size: 1.6rem; }
 
-  .projects-grid, .education-grid, .professional-skills-grid {
-    grid-template-columns: 1fr;
-    gap: 1.2rem;
+  /* 2-Column Mobile Grids across site */
+  .projects-grid {
+    display: grid !important;
+    grid-template-columns: repeat(2, 1fr) !important;
+    gap: 0.75rem !important;
   }
 
-  .skills-metrics-bar { grid-template-columns: 1fr; }
-  .card-footer { flex-direction: column; }
-  .card-footer .btn { width: 100%; justify-content: center; }
+  .project-card {
+    padding: 0.85rem !important;
+  }
 
-  .modal-body { padding: 1.2rem 0.85rem; }
-  .modal-h2 { font-size: 1.35rem; }
-  .resume-modal-container { padding: 1.2rem; }
-  .resume-name { font-size: 1.8rem; }
+  .project-card .card-title {
+    font-size: 0.92rem !important;
+  }
+
+  .project-card .card-desc {
+    font-size: 0.78rem !important;
+    line-height: 1.4 !important;
+  }
+
+  .education-grid {
+    display: grid !important;
+    grid-template-columns: repeat(2, 1fr) !important;
+    gap: 0.75rem !important;
+  }
+
+  .education-card {
+    padding: 0.85rem !important;
+  }
+
+  .certificates-grid {
+    display: grid !important;
+    grid-template-columns: repeat(2, 1fr) !important;
+    gap: 0.75rem !important;
+  }
+
+  .certificate-card {
+    padding: 0.65rem !important;
+  }
+
+  .professional-skills-grid {
+    display: grid !important;
+    grid-template-columns: repeat(2, 1fr) !important;
+    gap: 0.6rem !important;
+  }
+
+  .skill-category-card {
+    padding: 0.75rem !important;
+  }
+
+  .skills-metrics-bar {
+    display: grid !important;
+    grid-template-columns: repeat(2, 1fr) !important;
+    gap: 0.6rem !important;
+  }
+
+  .card-footer {
+    flex-direction: column !important;
+    gap: 0.4rem !important;
+  }
+
+  .card-footer .btn {
+    width: 100% !important;
+    justify-content: center !important;
+    font-size: 0.76rem !important;
+    padding: 0.4rem 0.6rem !important;
+  }
+
+  /* View Resume Modal Mobile Optimization */
+  .modal-body { padding: 1rem 0.75rem !important; }
+  .modal-h2 { font-size: 1.25rem !important; }
+  
+  .resume-modal-container {
+    padding: 0.85rem !important;
+  }
+
+  .resume-grid-layout {
+    display: grid !important;
+    grid-template-columns: 1fr 1fr !important;
+    gap: 0.6rem !important;
+  }
+
+  .resume-name {
+    font-size: 1.3rem !important;
+  }
+
+  .resume-title-role {
+    font-size: 0.74rem !important;
+  }
+
+  .resume-contact-row {
+    font-size: 0.7rem !important;
+    gap: 0.4rem !important;
+  }
+
+  .resume-section-heading {
+    font-size: 0.8rem !important;
+    padding-bottom: 0.15rem !important;
+    margin-bottom: 0.3rem !important;
+  }
+
+  .resume-summary-text, .resume-bullet-list li, .resume-skill-cat p {
+    font-size: 0.72rem !important;
+    line-height: 1.35 !important;
+  }
+
+  .resume-item-title {
+    font-size: 0.82rem !important;
+  }
+
+  .resume-item-sub, .resume-item-date {
+    font-size: 0.7rem !important;
+  }
+
+  .resume-skill-cat {
+    padding: 0.3rem 0.45rem !important;
+  }
+
+  .resume-skill-cat strong {
+    font-size: 0.74rem !important;
+  }
 }
 
 /* PRINT MEDIA STYLES (Single-Page Executive A4 PDF Export) */
