@@ -41,13 +41,21 @@ html {
   font-family: var(--font-main);
   background-color: var(--bg-dark);
   color: var(--text-primary);
-  overflow-x: hidden;
+  overflow-x: hidden !important;
+  width: 100% !important;
+  max-width: 100vw !important;
+  -webkit-text-size-adjust: 100%;
 }
 
 body {
   position: relative;
   min-height: 100vh;
   line-height: 1.6;
+  overflow-x: hidden !important;
+  width: 100% !important;
+  max-width: 100vw !important;
+  touch-action: manipulation;
+}
 }
 
 /* Background Canvas */
@@ -1648,7 +1656,12 @@ body {
     padding-bottom: 0.3rem !important;
   }
 
-  .terminal-input-wrap input {
+  .terminal-input-wrap input,
+  .search-input,
+  #project-search-input,
+  #cert-search-input,
+  input[type="text"],
+  input[type="search"] {
     font-size: 16px !important; /* Prevents auto zoom on mobile browsers */
   }
 
