@@ -1,0 +1,789 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Marpu Phanindra | Computer Science & Cybersecurity Portfolio</title>
+  <meta name="description" content="Official Portfolio of Marpu Phanindra - Computer Science Student specializing in Cybersecurity, IoT, and Blockchain Technology.">
+  
+  <!-- Google Fonts & Lucide Icons -->
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=JetBrains+Mono:wght@400;500;700&family=Outfit:wght@300;400;500;600;700;800&display=swap" rel="stylesheet">
+  <script src="https://unpkg.com/lucide@latest"></script>
+  
+  <link rel="stylesheet" href="styles.css">
+</head>
+<body>
+  <!-- Dynamic Particles Canvas -->
+  <canvas id="bg-canvas"></canvas>
+
+  <!-- Navigation Bar -->
+  <header class="navbar">
+    <div class="nav-container">
+      <a href="#" class="logo">
+        <span class="logo-icon"><i data-lucide="shield-alert"></i></span>
+        <span class="logo-text">MARPU <span class="highlight">PHANINDRA</span></span>
+      </a>
+
+      <nav class="nav-links">
+        <a href="#hero" class="nav-link active">Overview</a>
+        <a href="#experience" class="nav-link">Experience</a>
+        <a href="#education" class="nav-link">Education</a>
+        <a href="#projects" class="nav-link">Projects</a>
+        <a href="#skills" class="nav-link">Skills</a>
+        <a href="#certifications" class="nav-link">Certifications</a>
+        <a href="#terminal" class="nav-link">CLI Console</a>
+      </nav>
+
+      <div class="nav-actions">
+        <a href="mailto:marpuphani00@gmail.com" class="btn btn-outline" id="contact-nav-btn">
+          <i data-lucide="mail"></i> Email Me
+        </a>
+        <a href="https://github.com/whynotphani" target="_blank" rel="noopener" class="btn btn-primary" id="github-nav-btn">
+          <i data-lucide="github"></i> GitHub
+        </a>
+      </div>
+    </div>
+  </header>
+
+  <main>
+    <!-- Hero Section -->
+    <section id="hero" class="hero-section">
+      <div class="hero-container">
+        <div class="hero-badge">
+          <span class="pulse-dot green"></span>
+          <span>MVGR College B.Tech CS (2023 - Present) • Visakhapatnam, India</span>
+        </div>
+        
+        <h1 class="hero-title">
+          MARPU <span class="gradient-text">PHANINDRA</span>
+        </h1>
+
+        <p class="hero-role-title">COMPUTER SCIENCE STUDENT & SECURITY RESEARCHER</p>
+        
+        <p class="hero-description">
+          Tech-driven Computer Science student specializing in <strong>Cybersecurity, IoT, and Blockchain</strong>, with practical development experience at <strong>NetMaxin Group</strong> and leadership experience at <strong>NetMaxin Foundation</strong>. Adept in modern software development and engineering best practices, focused on delivering reliable, user-focused applications.
+        </p>
+
+        <!-- Quick Info Contact Chips -->
+        <div class="hero-chips">
+          <span class="chip"><i data-lucide="map-pin"></i> Visakhapatnam, India</span>
+          <a href="tel:+918121088558" class="chip chip-link"><i data-lucide="phone"></i> +91 8121088558</a>
+          <a href="mailto:marpuphani00@gmail.com" class="chip chip-link"><i data-lucide="mail"></i> marpuphani00@gmail.com</a>
+          <span class="chip"><i data-lucide="graduation-cap"></i> GPA: 6.84</span>
+        </div>
+
+        <!-- Quick Stats Banner -->
+        <div class="hero-stats">
+          <div class="stat-card">
+            <div class="stat-value">NetMaxin Group</div>
+            <div class="stat-label">QA & Tech Submissions</div>
+          </div>
+          <div class="stat-divider"></div>
+          <div class="stat-card">
+            <div class="stat-value">3+ Core Systems</div>
+            <div class="stat-label">IoT, Security & Tracking</div>
+          </div>
+          <div class="stat-divider"></div>
+          <div class="stat-card">
+            <div class="stat-value">7+ Certifications</div>
+            <div class="stat-label">Cisco, Cybercrime Police</div>
+          </div>
+          <div class="stat-divider"></div>
+          <div class="stat-card">
+            <div class="stat-value">Cybercrime Intern</div>
+            <div class="stat-label">Police Station Verified</div>
+          </div>
+        </div>
+
+        <div class="hero-cta-group">
+          <a href="#projects" class="btn btn-gradient btn-lg">
+            <i data-lucide="folder-git-2"></i> View Projects
+          </a>
+          <a href="#experience" class="btn btn-glass btn-lg">
+            <i data-lucide="briefcase"></i> Experience & Resume
+          </a>
+        </div>
+      </div>
+    </section>
+
+    <!-- Professional Experience Section -->
+    <section id="experience" class="section-padding bg-darker">
+      <div class="container">
+        <div class="section-header text-center">
+          <div class="section-tag"><i data-lucide="briefcase"></i> Industry & Roles</div>
+          <h2 class="section-title">Professional <span class="gradient-text">Experience</span></h2>
+          <p class="section-subtitle">Practical development & leadership background.</p>
+        </div>
+
+        <div class="experience-timeline">
+          <div class="timeline-card">
+            <div class="timeline-header">
+              <div>
+                <h3 class="role-title">QA Tester & Technical Assessment Lead</h3>
+                <h4 class="company-name">Netmaxin Group & NetMaxin Foundation</h4>
+              </div>
+              <div class="timeline-badge">2023 — Present</div>
+            </div>
+            
+            <ul class="experience-bullet-list">
+              <li><i data-lucide="check-circle-2"></i> Conducted comprehensive QA testing across multiple web/software platforms and generated detailed technical bug reports to streamline developer bug fixes.</li>
+              <li><i data-lucide="check-circle-2"></i> Evaluated intern technical submissions and authored structured performance and progress assessment reports.</li>
+              <li><i data-lucide="check-circle-2"></i> Conceptualized creative apparel graphic designs and produced high-fidelity digital mockups for <strong>Elyqra Muse</strong>.</li>
+            </ul>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- Education Section -->
+    <section id="education" class="section-padding">
+      <div class="container">
+        <div class="section-header text-center">
+          <div class="section-tag"><i data-lucide="graduation-cap"></i> Academic Qualifications</div>
+          <h2 class="section-title">Education <span class="gradient-text">& Background</span></h2>
+        </div>
+
+        <div class="education-grid">
+          <div class="edu-card featured-edu">
+            <div class="edu-icon"><i data-lucide="award"></i></div>
+            <div class="edu-year">2023 — Present</div>
+            <h3>MVGR College</h3>
+            <p class="edu-degree">Bachelor of Technology — Computer Science</p>
+            <div class="edu-meta">
+              <span class="badge badge-cyan">GPA: 6.84</span>
+              <span class="badge badge-purple">Specialization: IoT, Cybersecurity & Blockchain Technology</span>
+            </div>
+          </div>
+
+          <div class="edu-card">
+            <div class="edu-icon"><i data-lucide="book-open"></i></div>
+            <div class="edu-year">2021 — 2023</div>
+            <h3>Sri Viswa IIT and Medical Academy</h3>
+            <p class="edu-degree">Class 12 (MPC)</p>
+            <div class="edu-meta">
+              <span class="badge badge-emerald">Score: 89.7%</span>
+            </div>
+          </div>
+
+          <div class="edu-card">
+            <div class="edu-icon"><i data-lucide="school"></i></div>
+            <div class="edu-year">2020 — 2021</div>
+            <h3>Chalapathi Public School Gajuwaka</h3>
+            <p class="edu-degree">Class 10</p>
+            <div class="edu-meta">
+              <span class="badge badge-emerald">Score: 97.8%</span>
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- Projects Showcase Section -->
+    <section id="projects" class="section-padding bg-darker">
+      <div class="container">
+        <div class="section-header text-center">
+          <div class="section-tag"><i data-lucide="boxes"></i> Featured Innovations</div>
+          <h2 class="section-title">Engineered <span class="gradient-text">Projects & Systems</span></h2>
+          <p class="section-subtitle">Real-world IoT, cybersecurity, and live telemetry applications.</p>
+        </div>
+
+        <!-- Filter Controls -->
+        <div class="filter-bar">
+          <button class="filter-btn active" data-filter="all">All Projects</button>
+          <button class="filter-btn" data-filter="iot">IoT & Sensing</button>
+          <button class="filter-btn" data-filter="security">Cybersecurity & Portal</button>
+          <button class="filter-btn" data-filter="tracking">Live Fleet Tracking</button>
+        </div>
+
+        <!-- Projects Grid -->
+        <div class="projects-grid">
+          
+          <!-- Card 1: Wi-Fi CSI Based 3D Environment Scanner -->
+          <article class="project-card" data-category="iot" id="project-wificsi">
+            <div class="card-image-wrapper">
+              <img src="assets/wificsi.jpg" alt="Wi-Fi CSI 3D Environment Scanner UI Preview" class="card-img">
+              <div class="card-overlay">
+                <span class="badge badge-cyan"><i data-lucide="wifi"></i> IoT & CSI Sensing</span>
+                <span class="badge badge-dark">Camera-less 3D Scan</span>
+              </div>
+            </div>
+            
+            <div class="card-body">
+              <div class="card-header-meta">
+                <h3 class="card-title">Wi-Fi CSI Based 3D Environment Scanner</h3>
+                <span class="repo-tag"><i data-lucide="cpu"></i> Subcarrier Signal Processing</span>
+              </div>
+
+              <p class="card-text">
+                An innovative IoT sensing system extracting Wi-Fi Channel State Information (CSI) across subcarriers to map indoor environments and detect physical obstacles dynamically without relying on cameras.
+              </p>
+
+              <div class="tech-tags">
+                <span class="tag">IoT Sensing</span>
+                <span class="tag">Wi-Fi CSI</span>
+                <span class="tag">Subcarrier Signal Processing</span>
+                <span class="tag">3D Spatial Mapping</span>
+                <span class="tag">Python</span>
+              </div>
+
+              <div class="card-footer">
+                <button class="btn btn-sm btn-primary open-modal-btn" data-project="wificsi">
+                  <i data-lucide="maximize-2"></i> Inspect Sensing Engine
+                </button>
+              </div>
+            </div>
+          </article>
+
+          <!-- Card 2: Cyber Crime Reporting & Management Portal -->
+          <article class="project-card" data-category="security" id="project-cybercrime">
+            <div class="card-image-wrapper">
+              <img src="assets/cybercrime.jpg" alt="CyberCrime Case Reporting Portal UI Preview" class="card-img">
+              <div class="card-overlay">
+                <span class="badge badge-cyan"><i data-lucide="shield-check"></i> Cybercrime Portal</span>
+                <span class="badge badge-dark">1930 Helpline Integration</span>
+              </div>
+            </div>
+            
+            <div class="card-body">
+              <div class="card-header-meta">
+                <h3 class="card-title">Cyber Crime Reporting & Management Portal</h3>
+                <span class="repo-tag"><i data-lucide="git-branch"></i> whynotphani/CyberCrime...</span>
+              </div>
+
+              <p class="card-text">
+                A streamlined 3-tier dual-portal system integrating 1930 emergency helpline call registration to enable direct citizen case reporting, evidence uploads, and real-time police officer case evaluation.
+              </p>
+
+              <div class="tech-tags">
+                <span class="tag">Node.js</span>
+                <span class="tag">Express</span>
+                <span class="tag">MongoDB</span>
+                <span class="tag">JWT Security</span>
+                <span class="tag">Multer Uploads</span>
+              </div>
+
+              <div class="card-footer">
+                <button class="btn btn-sm btn-primary open-modal-btn" data-project="cybercrime">
+                  <i data-lucide="maximize-2"></i> Inspect Dual-Portal
+                </button>
+                <a href="https://github.com/whynotphani/CyberCrime-Case-Reporting-Portal" target="_blank" rel="noopener" class="btn btn-sm btn-outline">
+                  <i data-lucide="github"></i> Repository
+                </a>
+              </div>
+            </div>
+          </article>
+
+          <!-- Card 3: ShuttleTrack – Live Bus Tracking System -->
+          <article class="project-card" data-category="tracking" id="project-shuttletrack">
+            <div class="card-image-wrapper">
+              <img src="assets/shuttletrack.jpg" alt="ShuttleTrack Live Bus Tracking System UI Preview" class="card-img">
+              <div class="card-overlay">
+                <span class="badge badge-emerald"><i data-lucide="navigation"></i> Fleet Telemetry</span>
+                <span class="badge badge-dark">Live GPS Map</span>
+              </div>
+            </div>
+
+            <div class="card-body">
+              <div class="card-header-meta">
+                <h3 class="card-title">ShuttleTrack — Live Bus Tracking System</h3>
+                <span class="repo-tag"><i data-lucide="git-branch"></i> whynotphani/ShuttleTrack</span>
+              </div>
+
+              <p class="card-text">
+                Developed a real-time bus tracking system enabling college students to monitor transport location, route ETA estimates, and arrival times on interactive Leaflet GIS maps.
+              </p>
+
+              <div class="tech-tags">
+                <span class="tag">React / Vite</span>
+                <span class="tag">TypeScript</span>
+                <span class="tag">Leaflet Maps</span>
+                <span class="tag">Radix UI</span>
+                <span class="tag">Vercel & Render</span>
+              </div>
+
+              <div class="card-footer">
+                <button class="btn btn-sm btn-primary open-modal-btn" data-project="shuttletrack">
+                  <i data-lucide="maximize-2"></i> View Telemetry
+                </button>
+                <a href="https://github.com/whynotphani/ShuttleTrack" target="_blank" rel="noopener" class="btn btn-sm btn-outline">
+                  <i data-lucide="github"></i> Repository
+                </a>
+              </div>
+            </div>
+          </article>
+
+          <!-- Card 4: AutoPenTest AI -->
+          <article class="project-card" data-category="security" id="project-autopentest">
+            <div class="card-image-wrapper">
+              <img src="assets/autopentest.jpg" alt="AutoPenTest AI Security Engine Preview" class="card-img">
+              <div class="card-overlay">
+                <span class="badge badge-purple"><i data-lucide="cpu"></i> AI Penetration Engine</span>
+                <span class="badge badge-dark">SecOps Scanner</span>
+              </div>
+            </div>
+
+            <div class="card-body">
+              <div class="card-header-meta">
+                <h3 class="card-title">AutoPenTest AI — Vulnerability Scanner</h3>
+                <span class="repo-tag"><i data-lucide="shield-alert"></i> Automated Security</span>
+              </div>
+
+              <p class="card-text">
+                Autonomous cybersecurity assessment engine featuring FastAPI backend, Framer Motion UI, automated port vulnerability scanning, and real-time exploit execution logs.
+              </p>
+
+              <div class="tech-tags">
+                <span class="tag">FastAPI</span>
+                <span class="tag">Python</span>
+                <span class="tag">React</span>
+                <span class="tag">Recharts</span>
+                <span class="tag">Penetration Testing</span>
+              </div>
+
+              <div class="card-footer">
+                <button class="btn btn-sm btn-primary open-modal-btn" data-project="autopentest">
+                  <i data-lucide="maximize-2"></i> Inspect Scanner
+                </button>
+              </div>
+            </div>
+          </article>
+
+        </div>
+      </div>
+    </section>
+
+    <!-- Professional Technical Skills Matrix Section -->
+    <section id="skills" class="section-padding">
+      <div class="container">
+        <div class="section-header text-center">
+          <div class="section-tag"><i data-lucide="cpu"></i> Interactive Matrix</div>
+          <h2 class="section-title">Technical <span class="gradient-text">Skills & Expertise</span></h2>
+          <p class="section-subtitle">Categorized breakdown of programming languages, frameworks, security domains, and engineering tools.</p>
+        </div>
+
+        <!-- Skills Overview Metrics Bar -->
+        <div class="skills-metrics-bar">
+          <div class="skill-metric-item">
+            <div class="metric-top">
+              <span class="metric-title"><i data-lucide="code-2"></i> Programming & Web</span>
+              <span class="metric-percent">95%</span>
+            </div>
+            <div class="metric-bar-bg"><div class="metric-bar-fill cyan" style="width: 95%;"></div></div>
+          </div>
+
+          <div class="skill-metric-item">
+            <div class="metric-top">
+              <span class="metric-title"><i data-lucide="shield-alert"></i> Cybersecurity & IoT</span>
+              <span class="metric-percent">90%</span>
+            </div>
+            <div class="metric-bar-bg"><div class="metric-bar-fill purple" style="width: 90%;"></div></div>
+          </div>
+
+          <div class="skill-metric-item">
+            <div class="metric-top">
+              <span class="metric-title"><i data-lucide="binary"></i> CS Fundamentals</span>
+              <span class="metric-percent">92%</span>
+            </div>
+            <div class="metric-bar-bg"><div class="metric-bar-fill emerald" style="width: 92%;"></div></div>
+          </div>
+        </div>
+
+        <!-- Live Search Bar & Category Filters -->
+        <div class="skills-controls">
+          <div class="skills-search-wrapper">
+            <i data-lucide="search" class="search-icon"></i>
+            <input type="text" id="skills-search-input" placeholder="Filter skills (e.g. Python, React, Security, C++)..." autocomplete="off">
+          </div>
+
+          <div class="skills-category-tabs">
+            <button class="skill-tab-btn active" data-tab="all">All Skills</button>
+            <button class="skill-tab-btn" data-tab="lang">Languages & Web</button>
+            <button class="skill-tab-btn" data-tab="security">Cybersecurity & IoT</button>
+            <button class="skill-tab-btn" data-tab="core">Core CS Concepts</button>
+            <button class="skill-tab-btn" data-tab="tools">Tools & IDEs</button>
+          </div>
+        </div>
+
+        <!-- Skills Cards Display Grid -->
+        <div class="professional-skills-grid" id="skills-matrix-grid">
+          
+          <!-- Category 1: Languages & Web -->
+          <div class="skill-pill-card" data-category="lang" data-keywords="c c++ programming language">
+            <div class="skill-pill-header">
+              <div class="skill-icon-box"><i data-lucide="code"></i></div>
+              <div>
+                <h4 class="skill-name">C / C++</h4>
+                <span class="skill-badge badge-cyan">Advanced Core</span>
+              </div>
+            </div>
+            <p class="skill-desc">System programming, memory management & Data Structures.</p>
+            <div class="skill-progress-row">
+              <div class="progress-bar"><div class="progress-fill cyan" style="width: 92%;"></div></div>
+              <span class="progress-val">92%</span>
+            </div>
+          </div>
+
+          <div class="skill-pill-card" data-category="lang" data-keywords="javascript js es6 react next node web">
+            <div class="skill-pill-header">
+              <div class="skill-icon-box"><i data-lucide="file-code"></i></div>
+              <div>
+                <h4 class="skill-name">JavaScript (ES6+)</h4>
+                <span class="skill-badge badge-cyan">Proficient</span>
+              </div>
+            </div>
+            <p class="skill-desc">Asynchronous APIs, DOM manipulation, ES modules & fullstack logic.</p>
+            <div class="skill-progress-row">
+              <div class="progress-bar"><div class="progress-fill cyan" style="width: 90%;"></div></div>
+              <span class="progress-val">90%</span>
+            </div>
+          </div>
+
+          <div class="skill-pill-card" data-category="lang" data-keywords="python fastapi ml scripts automation">
+            <div class="skill-pill-header">
+              <div class="skill-icon-box"><i data-lucide="terminal"></i></div>
+              <div>
+                <h4 class="skill-name">Python</h4>
+                <span class="skill-badge badge-cyan">Advanced</span>
+              </div>
+            </div>
+            <p class="skill-desc">FastAPI microservices, scripting, IoT processing & AI/ML models.</p>
+            <div class="skill-progress-row">
+              <div class="progress-bar"><div class="progress-fill cyan" style="width: 94%;"></div></div>
+              <span class="progress-val">94%</span>
+            </div>
+          </div>
+
+          <div class="skill-pill-card" data-category="lang" data-keywords="java oop backend android">
+            <div class="skill-pill-header">
+              <div class="skill-icon-box"><i data-lucide="coffee"></i></div>
+              <div>
+                <h4 class="skill-name">Java</h4>
+                <span class="skill-badge badge-cyan">Proficient</span>
+              </div>
+            </div>
+            <p class="skill-desc">Object-oriented architecture, Android Studio & backend basics.</p>
+            <div class="skill-progress-row">
+              <div class="progress-bar"><div class="progress-fill cyan" style="width: 85%;"></div></div>
+              <span class="progress-val">85%</span>
+            </div>
+          </div>
+
+          <div class="skill-pill-card" data-category="lang" data-keywords="react reactjs vite jsx frontend UI">
+            <div class="skill-pill-header">
+              <div class="skill-icon-box"><i data-lucide="layout"></i></div>
+              <div>
+                <h4 class="skill-name">React.js & Next.js</h4>
+                <span class="skill-badge badge-purple">Specialized</span>
+              </div>
+            </div>
+            <p class="skill-desc">Component-driven architecture, custom hooks, SSR & state routing.</p>
+            <div class="skill-progress-row">
+              <div class="progress-bar"><div class="progress-fill purple" style="width: 90%;"></div></div>
+              <span class="progress-val">90%</span>
+            </div>
+          </div>
+
+          <div class="skill-pill-card" data-category="lang" data-keywords="html html5 css css3 tailwind responsive grid flexbox">
+            <div class="skill-pill-header">
+              <div class="skill-icon-box"><i data-lucide="palette"></i></div>
+              <div>
+                <h4 class="skill-name">HTML5, CSS3 & Tailwind CSS</h4>
+                <span class="skill-badge badge-emerald">Expert</span>
+              </div>
+            </div>
+            <p class="skill-desc">Glassmorphism, responsive CSS design systems, dark modes & micro-animations.</p>
+            <div class="skill-progress-row">
+              <div class="progress-bar"><div class="progress-fill emerald" style="width: 96%;"></div></div>
+              <span class="progress-val">96%</span>
+            </div>
+          </div>
+
+          <!-- Category 2: Cybersecurity & IoT -->
+          <div class="skill-pill-card" data-category="security" data-keywords="cybersecurity security penetration testing pentest bug hunting audit">
+            <div class="skill-pill-header">
+              <div class="skill-icon-box text-purple"><i data-lucide="shield-alert"></i></div>
+              <div>
+                <h4 class="skill-name">Penetration Testing & Bug Hunting</h4>
+                <span class="skill-badge badge-purple">Specialized</span>
+              </div>
+            </div>
+            <p class="skill-desc">Vulnerability assessment, OWASP Top 10 auditing & security testing.</p>
+            <div class="skill-progress-row">
+              <div class="progress-bar"><div class="progress-fill purple" style="width: 88%;"></div></div>
+              <span class="progress-val">88%</span>
+            </div>
+          </div>
+
+          <div class="skill-pill-card" data-category="security" data-keywords="iot csi wifi channel state information sensing 3d mapping obstacle">
+            <div class="skill-pill-header">
+              <div class="skill-icon-box text-cyan"><i data-lucide="wifi"></i></div>
+              <div>
+                <h4 class="skill-name">IoT & Wi-Fi CSI Sensing</h4>
+                <span class="skill-badge badge-cyan">Research & Hardware</span>
+              </div>
+            </div>
+            <p class="skill-desc">Subcarrier signal extraction, camera-less indoor 3D mapping & obstacle detection.</p>
+            <div class="skill-progress-row">
+              <div class="progress-bar"><div class="progress-fill cyan" style="width: 92%;"></div></div>
+              <span class="progress-val">92%</span>
+            </div>
+          </div>
+
+          <div class="skill-pill-card" data-category="security" data-keywords="blockchain cryptography hash decentralization ledger">
+            <div class="skill-pill-header">
+              <div class="skill-icon-box text-emerald"><i data-lucide="blocks"></i></div>
+              <div>
+                <h4 class="skill-name">Blockchain Basics</h4>
+                <span class="skill-badge badge-emerald">Specialization</span>
+              </div>
+            </div>
+            <p class="skill-desc">Distributed ledgers, smart contracts & cryptographic security principles.</p>
+            <div class="skill-progress-row">
+              <div class="progress-bar"><div class="progress-fill emerald" style="width: 82%;"></div></div>
+              <span class="progress-val">82%</span>
+            </div>
+          </div>
+
+          <!-- Category 3: Core CS Concepts -->
+          <div class="skill-pill-card" data-category="core" data-keywords="data structures dsa algorithms arrays trees graphs search sort">
+            <div class="skill-pill-header">
+              <div class="skill-icon-box"><i data-lucide="binary"></i></div>
+              <div>
+                <h4 class="skill-name">Data Structures & Algorithms</h4>
+                <span class="skill-badge badge-cyan">Core CS</span>
+              </div>
+            </div>
+            <p class="skill-desc">Trees, Graphs, Dynamic Programming, Sorting & Time Complexity optimization.</p>
+            <div class="skill-progress-row">
+              <div class="progress-bar"><div class="progress-fill cyan" style="width: 90%;"></div></div>
+              <span class="progress-val">90%</span>
+            </div>
+          </div>
+
+          <div class="skill-pill-card" data-category="core" data-keywords="oop object oriented programming inheritance polymorphism encapsulation">
+            <div class="skill-pill-header">
+              <div class="skill-icon-box"><i data-lucide="box"></i></div>
+              <div>
+                <h4 class="skill-name">Object-Oriented Programming (OOP)</h4>
+                <span class="skill-badge badge-cyan">Core CS</span>
+              </div>
+            </div>
+            <p class="skill-desc">Abstractions, encapsulation, inheritance, polymorphism & design patterns.</p>
+            <div class="skill-progress-row">
+              <div class="progress-bar"><div class="progress-fill cyan" style="width: 94%;"></div></div>
+              <span class="progress-val">94%</span>
+            </div>
+          </div>
+
+          <div class="skill-pill-card" data-category="core" data-keywords="dbms database mongodb sql relational mongoose ORM">
+            <div class="skill-pill-header">
+              <div class="skill-icon-box"><i data-lucide="database"></i></div>
+              <div>
+                <h4 class="skill-name">Database Management (DBMS & MongoDB)</h4>
+                <span class="skill-badge badge-emerald">Core CS</span>
+              </div>
+            </div>
+            <p class="skill-desc">Relational SQL queries, NoSQL MongoDB Mongoose schemas & indexing.</p>
+            <div class="skill-progress-row">
+              <div class="progress-bar"><div class="progress-fill emerald" style="width: 88%;"></div></div>
+              <span class="progress-val">88%</span>
+            </div>
+          </div>
+
+          <div class="skill-pill-card" data-category="core" data-keywords="computer networks tcp ip http sockets packet tracer cisco routing">
+            <div class="skill-pill-header">
+              <div class="skill-icon-box"><i data-lucide="network"></i></div>
+              <div>
+                <h4 class="skill-name">Computer Networks & TCP/IP</h4>
+                <span class="skill-badge badge-purple">Cisco Certified</span>
+              </div>
+            </div>
+            <p class="skill-desc">OSI model, Packet Tracer, socket programming, routing protocols & HTTP/S.</p>
+            <div class="skill-progress-row">
+              <div class="progress-bar"><div class="progress-fill purple" style="width: 92%;"></div></div>
+              <span class="progress-val">92%</span>
+            </div>
+          </div>
+
+          <div class="skill-pill-card" data-category="core" data-keywords="operating systems os processes threads memory scheduling linux windows">
+            <div class="skill-pill-header">
+              <div class="skill-icon-box"><i data-lucide="cpu"></i></div>
+              <div>
+                <h4 class="skill-name">Operating Systems</h4>
+                <span class="skill-badge badge-cyan">Core CS</span>
+              </div>
+            </div>
+            <p class="skill-desc">Process synchronization, thread management, memory allocation & shell CLI.</p>
+            <div class="skill-progress-row">
+              <div class="progress-bar"><div class="progress-fill cyan" style="width: 86%;"></div></div>
+              <span class="progress-val">86%</span>
+            </div>
+          </div>
+
+          <!-- Category 4: Tools & Software -->
+          <div class="skill-pill-card" data-category="tools" data-keywords="git github vs code antigravity ide android studio version control">
+            <div class="skill-pill-header">
+              <div class="skill-icon-box"><i data-lucide="github"></i></div>
+              <div>
+                <h4 class="skill-name">Git, GitHub & Antigravity IDE</h4>
+                <span class="skill-badge badge-emerald">Developer Tools</span>
+              </div>
+            </div>
+            <p class="skill-desc">Version control workflows, commit audits, pull requests & IDE debugging.</p>
+            <div class="skill-progress-row">
+              <div class="progress-bar"><div class="progress-fill emerald" style="width: 95%;"></div></div>
+              <span class="progress-val">95%</span>
+            </div>
+          </div>
+
+          <div class="skill-pill-card" data-category="tools" data-keywords="figma canva autocad blender UI design 3D modeling graphic">
+            <div class="skill-pill-header">
+              <div class="skill-icon-box"><i data-lucide="figma"></i></div>
+              <div>
+                <h4 class="skill-name">Figma, AutoCAD & Blender</h4>
+                <span class="skill-badge badge-purple">Design & 3D</span>
+              </div>
+            </div>
+            <p class="skill-desc">UI/UX prototyping, 3D modeling, apparel graphics (NetMaxin/Elyqra Muse) & AutoCAD.</p>
+            <div class="skill-progress-row">
+              <div class="progress-bar"><div class="progress-fill purple" style="width: 88%;"></div></div>
+              <span class="progress-val">88%</span>
+            </div>
+          </div>
+
+        </div>
+      </div>
+    </section>
+
+    <!-- Certifications Section -->
+    <section id="certifications" class="section-padding bg-darker">
+      <div class="container">
+        <div class="section-header text-center">
+          <div class="section-tag"><i data-lucide="award"></i> Verified Credentials</div>
+          <h2 class="section-title">Certifications <span class="gradient-text">& Training</span></h2>
+          <p class="section-subtitle">Formal training in Cybersecurity, Networking, and Programming.</p>
+        </div>
+
+        <div class="certifications-grid">
+          <div class="cert-card">
+            <div class="cert-icon text-cyan"><i data-lucide="shield-check"></i></div>
+            <h4>Cybercrime Internship</h4>
+            <p>Cybercrime Police Station</p>
+          </div>
+
+          <div class="cert-card">
+            <div class="cert-icon text-green"><i data-lucide="lock"></i></div>
+            <h4>Cybersecurity Essentials</h4>
+            <p>Cisco Networking Academy</p>
+          </div>
+
+          <div class="cert-card">
+            <div class="cert-icon text-cyan"><i data-lucide="network"></i></div>
+            <h4>Cisco Packet Tracer</h4>
+            <p>Cisco Networking Academy</p>
+          </div>
+
+          <div class="cert-card">
+            <div class="cert-icon text-purple"><i data-lucide="globe"></i></div>
+            <h4>Exploring Networking</h4>
+            <p>Cisco Networking Academy</p>
+          </div>
+
+          <div class="cert-card">
+            <div class="cert-icon text-cyan"><i data-lucide="shield"></i></div>
+            <h4>Introduction to Cybersecurity</h4>
+            <p>Netmaxin Online Program</p>
+          </div>
+
+          <div class="cert-card">
+            <div class="cert-icon text-green"><i data-lucide="code"></i></div>
+            <h4>C Programming</h4>
+            <p>Netmaxin Academy</p>
+          </div>
+
+          <div class="cert-card">
+            <div class="cert-icon text-purple"><i data-lucide="cpu"></i></div>
+            <h4>AI / ML Certification</h4>
+            <p>Netmaxin Academy</p>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- Interactive Console / Terminal Shell -->
+    <section id="terminal" class="section-padding">
+      <div class="container">
+        <div class="section-header text-center">
+          <div class="section-tag"><i data-lucide="terminal"></i> Interactive Shell</div>
+          <h2 class="section-title">Phanindra's <span class="gradient-text">CLI Console</span></h2>
+        </div>
+
+        <div class="terminal-window">
+          <div class="terminal-bar">
+            <div class="terminal-dots">
+              <span class="dot dot-red"></span>
+              <span class="dot dot-yellow"></span>
+              <span class="dot dot-green"></span>
+            </div>
+            <div class="terminal-title">bash - marpuphani@portfolio:~</div>
+            <div class="terminal-actions">
+              <button class="term-btn" id="clear-term-btn" title="Clear Console"><i data-lucide="trash-2"></i></button>
+            </div>
+          </div>
+
+          <div class="terminal-content" id="terminal-output">
+            <div class="term-line welcome-line">
+              <span class="term-cyan">System initialized for Marpu Phanindra.</span> Type <span class="term-green">'help'</span> or click presets below.
+            </div>
+          </div>
+
+          <div class="terminal-presets">
+            <button class="preset-btn" data-cmd="help">help</button>
+            <button class="preset-btn" data-cmd="resume">resume summary</button>
+            <button class="preset-btn" data-cmd="list">list projects</button>
+            <button class="preset-btn" data-cmd="certifications">certifications</button>
+            <button class="preset-btn" data-cmd="skills">skills matrix</button>
+            <button class="preset-btn" data-cmd="contact">contact details</button>
+          </div>
+
+          <form id="terminal-form" class="terminal-input-row">
+            <span class="prompt-user">marpuphani@portal</span><span class="prompt-colon">:</span><span class="prompt-path">~</span><span class="prompt-symbol">$</span>
+            <input type="text" id="terminal-input" autocomplete="off" spellcheck="false" placeholder="type command (e.g., 'resume', 'skills', 'certifications')...">
+            <button type="submit" class="term-submit-btn"><i data-lucide="send"></i></button>
+          </form>
+        </div>
+      </div>
+    </section>
+
+  </main>
+
+  <!-- Footer -->
+  <footer class="footer">
+    <div class="container footer-content">
+      <div class="footer-left">
+        <span class="logo-text">MARPU <span class="highlight">PHANINDRA</span></span>
+        <p>Visakhapatnam, India • marpuphani00@gmail.com • +91 8121088558</p>
+      </div>
+      <div class="footer-links">
+        <a href="mailto:marpuphani00@gmail.com"><i data-lucide="mail"></i> Email</a>
+        <a href="https://github.com/whynotphani" target="_blank" rel="noopener"><i data-lucide="github"></i> @whynotphani</a>
+        <a href="#hero">Back to top <i data-lucide="arrow-up"></i></a>
+      </div>
+    </div>
+  </footer>
+
+  <!-- Detail Modal Dialog -->
+  <div class="modal-backdrop" id="project-modal">
+    <div class="modal-box">
+      <button class="modal-close-btn" id="close-modal-btn"><i data-lucide="x"></i></button>
+      <div class="modal-body" id="modal-content-container">
+        <!-- Content inserted dynamically by JS -->
+      </div>
+    </div>
+  </div>
+
+  <script src="app.js"></script>
+</body>
+</html>
