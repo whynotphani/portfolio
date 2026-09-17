@@ -346,10 +346,52 @@ document.addEventListener('DOMContentLoaded', () => {
     }
   };
 
-  // Modal Control
+  // Modal Control & History State Navigation
   const modal = document.getElementById('project-modal');
   const closeModalBtn = document.getElementById('close-modal-btn');
   const modalContainer = document.getElementById('modal-content-container');
+
+  let isModalOpen = false;
+
+  const showModal = () => {
+    if (!isModalOpen) {
+      isModalOpen = true;
+      try {
+        history.pushState({ modalOpen: true }, '', '#inspect');
+      } catch (err) {
+        console.warn('History pushState failed:', err);
+      }
+    }
+    if (modal) modal.classList.add('active');
+  };
+
+  const closeModal = (isPopState = false) => {
+    if (!isModalOpen && (!modal || !modal.classList.contains('active'))) return;
+    isModalOpen = false;
+    if (modal) modal.classList.remove('active');
+    
+    if (!isPopState && history.state && history.state.modalOpen) {
+      try {
+        history.back();
+      } catch (err) {
+        console.warn('History back failed:', err);
+      }
+    }
+  };
+
+  // Intercept Browser Back Button / Mobile Back Swipe
+  window.addEventListener('popstate', () => {
+    if (isModalOpen || (modal && modal.classList.contains('active'))) {
+      closeModal(true);
+    }
+  });
+
+  // Intercept Keyboard ESC Key
+  document.addEventListener('keydown', (e) => {
+    if (e.key === 'Escape' && (isModalOpen || (modal && modal.classList.contains('active')))) {
+      closeModal(false);
+    }
+  });
 
   const openModal = (key) => {
     const spec = projectSpecs[key];
@@ -385,7 +427,7 @@ document.addEventListener('DOMContentLoaded', () => {
 
     if (window.lucide) window.lucide.createIcons();
 
-    modal.classList.add('active');
+    showModal();
 
     const copyBtn = modalContainer.querySelector('.copy-modal-path-btn');
     if (copyBtn) {
@@ -434,7 +476,7 @@ document.addEventListener('DOMContentLoaded', () => {
 
     if (window.lucide) window.lucide.createIcons();
 
-    modal.classList.add('active');
+    showModal();
 
     const copyBtn = modalContainer.querySelector('.copy-cert-pdf-path');
     if (copyBtn) {
@@ -613,7 +655,7 @@ document.addEventListener('DOMContentLoaded', () => {
     `;
 
     if (window.lucide) window.lucide.createIcons();
-    modal.classList.add('active');
+    showModal();
 
     // Copy Resume Text Handler
     const copyTextBtn = modalContainer.querySelector('#copy-resume-text-btn');
@@ -687,12 +729,12 @@ CERTIFICATIONS
   });
 
   if (closeModalBtn) {
-    closeModalBtn.addEventListener('click', () => modal.classList.remove('active'));
+    closeModalBtn.addEventListener('click', () => closeModal(false));
   }
 
   if (modal) {
     modal.addEventListener('click', (e) => {
-      if (e.target === modal) modal.classList.remove('active');
+      if (e.target === modal) closeModal(false);
     });
   }
 
