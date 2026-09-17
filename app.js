@@ -4,6 +4,22 @@ document.addEventListener('DOMContentLoaded', () => {
     window.lucide.createIcons();
   }
 
+  // Mobile Navigation Drawer Toggle
+  const mobileMenuBtn = document.getElementById('mobile-menu-btn');
+  const mobileNavDropdown = document.getElementById('mobile-nav-dropdown');
+
+  if (mobileMenuBtn && mobileNavDropdown) {
+    mobileMenuBtn.addEventListener('click', () => {
+      mobileNavDropdown.classList.toggle('active');
+    });
+
+    document.querySelectorAll('.mobile-nav-link').forEach(link => {
+      link.addEventListener('click', () => {
+        mobileNavDropdown.classList.remove('active');
+      });
+    });
+  }
+
   // Dynamic Particles Canvas Background
   const canvas = document.getElementById('bg-canvas');
   if (canvas) {
@@ -16,7 +32,7 @@ document.addEventListener('DOMContentLoaded', () => {
       height = canvas.height = window.innerHeight;
     });
 
-    const particles = Array.from({ length: 45 }, () => ({
+    const particles = Array.from({ length: 35 }, () => ({
       x: Math.random() * width,
       y: Math.random() * height,
       vx: (Math.random() - 0.5) * 0.4,
@@ -46,8 +62,8 @@ document.addEventListener('DOMContentLoaded', () => {
           const dy = p.y - p2.y;
           const dist = Math.sqrt(dx * dx + dy * dy);
 
-          if (dist < 130) {
-            ctx.strokeStyle = `rgba(56, 189, 248, ${0.15 * (1 - dist / 130)})`;
+          if (dist < 120) {
+            ctx.strokeStyle = `rgba(56, 189, 248, ${0.15 * (1 - dist / 120)})`;
             ctx.lineWidth = 0.6;
             ctx.beginPath();
             ctx.moveTo(p.x, p.y);
@@ -87,7 +103,7 @@ document.addEventListener('DOMContentLoaded', () => {
     });
   });
 
-  // --- SKILLS MATRIX INTERACTIVE SEARCH & TABS ---
+  // --- SKILLS MATRIX SEARCH & TABS ---
   const skillTabBtns = document.querySelectorAll('.skill-tab-btn');
   const skillCards = document.querySelectorAll('.skill-pill-card');
   const searchInput = document.getElementById('skills-search-input');
@@ -129,7 +145,7 @@ document.addEventListener('DOMContentLoaded', () => {
     searchInput.addEventListener('input', filterSkills);
   }
 
-  // --- CERTIFICATES INTERACTIVE SEARCH & CATEGORY FILTERS ---
+  // --- CERTIFICATES SEARCH & CATEGORY FILTERS ---
   const certFilterBtns = document.querySelectorAll('.cert-filter-btn');
   const certCards = document.querySelectorAll('.cert-card-item');
   const certSearchInput = document.getElementById('cert-search-input');
@@ -171,7 +187,7 @@ document.addEventListener('DOMContentLoaded', () => {
     certSearchInput.addEventListener('input', filterCertificates);
   }
 
-  // Project Specifications Data for Modal
+  // Project Specs Data
   const projectSpecs = {
     wificsi: {
       title: "Wi-Fi CSI Based 3D Environment Scanner",
@@ -235,7 +251,7 @@ document.addEventListener('DOMContentLoaded', () => {
     }
   };
 
-  // Certificate Specifications Data for Modal
+  // Certificate Specs Data
   const certSpecs = {
     cybercrime_internship: {
       title: "Cybercrime Police Station Internship",
@@ -345,7 +361,7 @@ document.addEventListener('DOMContentLoaded', () => {
       <div class="modal-subtitle"><i data-lucide="git-branch"></i> ${spec.repo}</div>
       <p class="modal-desc">${spec.description}</p>
       
-      <h3 style="font-size: 1.1rem; margin-bottom: 1rem; color: var(--accent-cyan);">Key Engineering Highlights</h3>
+      <h3 style="font-size: 1.05rem; margin-bottom: 0.8rem; color: var(--accent-cyan);">Key Engineering Highlights</h3>
       <div class="modal-feature-list">
         ${spec.features.map(f => `
           <div class="feature-item">
@@ -355,13 +371,13 @@ document.addEventListener('DOMContentLoaded', () => {
         `).join('')}
       </div>
 
-      <div style="display: flex; gap: 1rem; flex-wrap: wrap;">
+      <div style="display: flex; gap: 0.8rem; flex-wrap: wrap;">
         ${spec.github ? `
-          <a href="${spec.github}" target="_blank" rel="noopener" class="btn btn-primary">
+          <a href="${spec.github}" target="_blank" rel="noopener" class="btn btn-primary w-100-mobile">
             <i data-lucide="github"></i> View GitHub Repository
           </a>
         ` : ''}
-        <button class="btn btn-glass copy-modal-path-btn" data-path="${spec.path}">
+        <button class="btn btn-glass copy-modal-path-btn w-100-mobile" data-path="${spec.path}">
           <i data-lucide="folder"></i> Copy Local Directory Path
         </button>
       </div>
@@ -390,27 +406,27 @@ document.addEventListener('DOMContentLoaded', () => {
     if (!cert) return;
 
     modalContainer.innerHTML = `
-      <div style="text-align: center; margin-bottom: 1.5rem;">
-        <img src="${cert.img}" alt="${cert.title}" style="max-height: 480px; width: auto; max-width: 100%; border-radius: 8px; border: 1px solid var(--border-glow); box-shadow: 0 10px 30px rgba(0,0,0,0.6);">
+      <div style="text-align: center; margin-bottom: 1.2rem;">
+        <img src="${cert.img}" alt="${cert.title}" style="max-height: 420px; width: auto; max-width: 100%; border-radius: 8px; border: 1px solid var(--border-glow); box-shadow: 0 10px 30px rgba(0,0,0,0.6);">
       </div>
       <h2 class="modal-h2">${cert.title}</h2>
       <div class="modal-subtitle"><i data-lucide="award"></i> Issued by ${cert.issuer}</div>
       <p class="modal-desc">${cert.description}</p>
       
-      <div class="modal-feature-list" style="margin-bottom: 1.8rem;">
+      <div class="modal-feature-list" style="margin-bottom: 1.5rem;">
         ${cert.details.map(d => `
           <div class="feature-item">
-            <h4 style="color: var(--accent-cyan); font-size: 0.85rem;">${d.label}</h4>
+            <h4 style="color: var(--accent-cyan); font-size: 0.82rem;">${d.label}</h4>
             <p style="font-weight: 600; color: #fff;">${d.val}</p>
           </div>
         `).join('')}
       </div>
 
-      <div style="display: flex; gap: 1rem; flex-wrap: wrap;">
-        <a href="${cert.pdf}" target="_blank" class="btn btn-primary btn-lg">
+      <div style="display: flex; gap: 0.8rem; flex-wrap: wrap;">
+        <a href="${cert.pdf}" target="_blank" class="btn btn-primary btn-lg w-100-mobile">
           <i data-lucide="file-text"></i> Open Full PDF Document
         </a>
-        <button class="btn btn-glass copy-cert-pdf-path" data-path="${cert.pdf}">
+        <button class="btn btn-glass copy-cert-pdf-path w-100-mobile" data-path="${cert.pdf}">
           <i data-lucide="copy"></i> Copy File Path
         </button>
       </div>
@@ -433,6 +449,70 @@ document.addEventListener('DOMContentLoaded', () => {
       });
     }
   };
+
+  // Dedicated "View Portfolio Resume" Modal Function
+  const openFullPortfolioModal = () => {
+    modalContainer.innerHTML = `
+      <div style="text-align: center; margin-bottom: 1.5rem;">
+        <div style="width: 56px; height: 56px; border-radius: 50%; background: linear-gradient(135deg, rgba(56, 189, 248, 0.2), rgba(168, 85, 247, 0.2)); border: 1px solid var(--border-glow); display: inline-flex; align-items: center; justify-content: center; color: var(--accent-cyan); margin-bottom: 0.8rem;">
+          <i data-lucide="shield-alert" style="width: 28px; height: 28px;"></i>
+        </div>
+        <h2 class="modal-h2">MARPU PHANINDRA</h2>
+        <div class="modal-subtitle">Computer Science Student • Cybersecurity, IoT & Blockchain Specialist</div>
+        <p style="color: var(--text-secondary); font-size: 0.9rem;">Visakhapatnam, India • +91 8121088558 • marpuphani00@gmail.com</p>
+      </div>
+
+      <div class="modal-feature-list" style="margin-bottom: 1.5rem;">
+        <div class="feature-item">
+          <h4>Education</h4>
+          <p><strong>MVGR College</strong> — B.Tech CS (GPA: 6.84)</p>
+          <p>Specialization: IoT, Cybersecurity & Blockchain</p>
+        </div>
+        <div class="feature-item">
+          <h4>Professional Experience</h4>
+          <p><strong>Netmaxin Group & Foundation</strong> — QA Tester & Tech Lead</p>
+          <p>Platform QA testing, intern evaluations, apparel design (Elyqra Muse)</p>
+        </div>
+        <div class="feature-item">
+          <h4>Core Projects</h4>
+          <p>• Wi-Fi CSI 3D Environment Scanner (IoT)</p>
+          <p>• Cyber Crime Reporting Portal (1930 Helpline Integration)</p>
+          <p>• ShuttleTrack Live Bus Tracker (Leaflet GIS)</p>
+        </div>
+        <div class="feature-item">
+          <h4>Certifications & Credentials</h4>
+          <p>• Cybercrime Police Station Internship</p>
+          <p>• Cisco Junior Cybersecurity Analyst</p>
+          <p>• Cisco Packet Tracer & Networking</p>
+        </div>
+      </div>
+
+      <div style="display: flex; gap: 0.8rem; flex-wrap: wrap; justify-content: center;">
+        <a href="mailto:marpuphani00@gmail.com" class="btn btn-primary btn-lg w-100-mobile">
+          <i data-lucide="mail"></i> Contact Marpu Phanindra
+        </a>
+        <a href="https://github.com/whynotphani" target="_blank" rel="noopener" class="btn btn-glass btn-lg w-100-mobile">
+          <i data-lucide="github"></i> View GitHub Profile
+        </a>
+      </div>
+    `;
+
+    if (window.lucide) window.lucide.createIcons();
+    modal.classList.add('active');
+  };
+
+  // View Portfolio Buttons Listeners
+  const portfolioBtns = [
+    document.getElementById('view-portfolio-nav-btn'),
+    document.getElementById('view-portfolio-hero-btn'),
+    document.getElementById('view-portfolio-mobile-btn')
+  ];
+
+  portfolioBtns.forEach(btn => {
+    if (btn) {
+      btn.addEventListener('click', openFullPortfolioModal);
+    }
+  });
 
   document.querySelectorAll('.open-modal-btn').forEach(btn => {
     btn.addEventListener('click', () => openModal(btn.dataset.project));
@@ -477,6 +557,7 @@ document.addEventListener('DOMContentLoaded', () => {
         printLine(`
           <div style="margin-top: 0.3rem;">
             <span class="term-cyan">Available Commands:</span><br>
+            • <span class="term-green">portfolio</span> - Open full portfolio modal<br>
             • <span class="term-green">resume</span> - Display summary profile of Marpu Phanindra<br>
             • <span class="term-green">list</span> - List engineering projects<br>
             • <span class="term-green">certifications</span> - Display all 7 verified certificates<br>
@@ -486,6 +567,12 @@ document.addEventListener('DOMContentLoaded', () => {
             • <span class="term-green">clear</span> - Clear console output
           </div>
         `);
+        break;
+
+      case 'portfolio':
+      case 'view portfolio':
+        openFullPortfolioModal();
+        printLine(`<span class="term-green">✓ Opened full portfolio resume modal.</span>`);
         break;
 
       case 'resume':
