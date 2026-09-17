@@ -1207,8 +1207,9 @@ body {
   box-shadow: 0 25px 60px rgba(0, 0, 0, 0.8), 0 0 40px rgba(56, 189, 248, 0.2);
   transform: scale(0.95);
   transition: var(--transition-smooth);
-  overflow-y: auto !important;
-  overflow-x: hidden !important;
+  overflow: hidden !important;
+  display: flex;
+  flex-direction: column;
 }
 
 .modal-backdrop.active .modal-box {
@@ -1242,6 +1243,33 @@ body {
   padding: 1.8rem 1.5rem;
   max-width: 100%;
   box-sizing: border-box;
+  overflow-y: auto !important;
+  overflow-x: hidden !important;
+  max-height: 90vh;
+  scrollbar-width: thin !important;
+  scrollbar-color: var(--accent-cyan) rgba(11, 15, 25, 0.8) !important;
+}
+
+/* Custom Sleek Scrollbar INSIDE the rectangle container */
+.modal-body::-webkit-scrollbar {
+  width: 8px !important;
+  display: block !important;
+}
+
+.modal-body::-webkit-scrollbar-track {
+  background: rgba(11, 15, 25, 0.8) !important;
+  border-radius: 4px !important;
+  margin: 12px 0 !important;
+}
+
+.modal-body::-webkit-scrollbar-thumb {
+  background: var(--accent-cyan) !important;
+  border-radius: 4px !important;
+  border: 2px solid #0b0f19 !important;
+}
+
+.modal-body::-webkit-scrollbar-thumb:hover {
+  background: var(--accent-purple) !important;
 }
 
 /* Project Details Modal Content Styling */
