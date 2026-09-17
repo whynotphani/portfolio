@@ -457,9 +457,6 @@ document.addEventListener('DOMContentLoaded', () => {
         <a href="Resume/RESUME.pdf" download="Marpu_Phanindra_Resume.pdf" target="_blank" class="btn btn-gradient btn-sm" id="download-official-resume-btn">
           <i data-lucide="download"></i> Download Official Resume (PDF)
         </a>
-        <button class="btn btn-outline btn-sm" id="print-resume-btn">
-          <i data-lucide="printer"></i> Print / Save Document
-        </button>
         <button class="btn btn-outline btn-sm" id="copy-resume-text-btn">
           <i data-lucide="copy"></i> Copy Text
         </button>
@@ -617,14 +614,6 @@ document.addEventListener('DOMContentLoaded', () => {
 
     if (window.lucide) window.lucide.createIcons();
     modal.classList.add('active');
-
-    // Print Button Handler
-    const printBtn = modalContainer.querySelector('#print-resume-btn');
-    if (printBtn) {
-      printBtn.addEventListener('click', () => {
-        window.print();
-      });
-    }
 
     // Copy Resume Text Handler
     const copyTextBtn = modalContainer.querySelector('#copy-resume-text-btn');
