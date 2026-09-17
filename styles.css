@@ -1431,11 +1431,27 @@ body {
   .resume-name { font-size: 1.8rem; }
 }
 
-/* PRINT MEDIA STYLES (Professional A4 PDF & Print Export) */
+/* PRINT MEDIA STYLES (Professional A4 PDF & Print Export - Scrollbar Free) */
 @media print {
   @page {
     size: A4 portrait;
     margin: 12mm 15mm 12mm 15mm;
+  }
+
+  /* Universal Scrollbar Removal in Print View */
+  *, *::before, *::after {
+    overflow: visible !important;
+    max-height: none !important;
+    box-shadow: none !important;
+    text-shadow: none !important;
+    scrollbar-width: none !important;
+    -ms-overflow-style: none !important;
+  }
+
+  ::-webkit-scrollbar {
+    display: none !important;
+    width: 0 !important;
+    height: 0 !important;
   }
 
   html, body {
@@ -1469,6 +1485,7 @@ body {
     left: auto !important;
     width: 100% !important;
     height: auto !important;
+    max-height: none !important;
     background: #ffffff !important;
     box-shadow: none !important;
     padding: 0 !important;
@@ -1487,6 +1504,10 @@ body {
     padding: 0 !important;
     margin: 0 !important;
     display: block !important;
+    position: static !important;
+    height: auto !important;
+    max-height: none !important;
+    overflow: visible !important;
   }
 
   .modal-box {
@@ -1494,10 +1515,14 @@ body {
     border: none !important;
     max-width: 100% !important;
     width: 100% !important;
+    height: auto !important;
+    max-height: none !important;
     background: #ffffff !important;
     color: #0f172a !important;
     padding: 0 !important;
     margin: 0 !important;
+    overflow: visible !important;
+    overflow-y: visible !important;
   }
 
   .resume-modal-container {
@@ -1507,6 +1532,9 @@ body {
     padding: 0 !important;
     margin: 0 !important;
     box-shadow: none !important;
+    max-height: none !important;
+    height: auto !important;
+    overflow: visible !important;
   }
 
   /* Executive Header in Print */
@@ -1665,4 +1693,5 @@ body {
     margin: 0 0.5rem !important;
   }
 }
+
 
