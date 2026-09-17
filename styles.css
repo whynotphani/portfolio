@@ -1431,34 +1431,238 @@ body {
   .resume-name { font-size: 1.8rem; }
 }
 
-/* PRINT MEDIA STYLES (PDF Generation & Print view) */
+/* PRINT MEDIA STYLES (Professional A4 PDF & Print Export) */
 @media print {
-  body * { visibility: hidden; }
-  #project-modal, #project-modal * { visibility: visible; }
-  #project-modal {
-    position: absolute;
-    left: 0;
-    top: 0;
-    width: 100%;
-    height: auto;
-    background: #fff !important;
-    color: #000 !important;
+  @page {
+    size: A4 portrait;
+    margin: 12mm 15mm 12mm 15mm;
   }
+
+  html, body {
+    background: #ffffff !important;
+    color: #0f172a !important;
+    font-family: 'Outfit', -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, sans-serif !important;
+    font-size: 9.5pt !important;
+    line-height: 1.45 !important;
+    margin: 0 !important;
+    padding: 0 !important;
+    width: 100% !important;
+    height: auto !important;
+    overflow: visible !important;
+    -webkit-print-color-adjust: exact !important;
+    print-color-adjust: exact !important;
+  }
+
+  /* Hide non-printable elements */
+  body > *:not(#project-modal) {
+    display: none !important;
+  }
+
+  .navbar, #bg-canvas, .modal-close-btn, .resume-actions-bar {
+    display: none !important;
+  }
+
+  #project-modal {
+    display: block !important;
+    position: static !important;
+    top: auto !important;
+    left: auto !important;
+    width: 100% !important;
+    height: auto !important;
+    background: #ffffff !important;
+    box-shadow: none !important;
+    padding: 0 !important;
+    margin: 0 !important;
+    overflow: visible !important;
+    visibility: visible !important;
+  }
+
+  #project-modal * {
+    visibility: visible !important;
+  }
+
+  .modal-overlay {
+    background: #ffffff !important;
+    backdrop-filter: none !important;
+    padding: 0 !important;
+    margin: 0 !important;
+    display: block !important;
+  }
+
   .modal-box {
     box-shadow: none !important;
     border: none !important;
     max-width: 100% !important;
-    background: #fff !important;
-    color: #000 !important;
+    width: 100% !important;
+    background: #ffffff !important;
+    color: #0f172a !important;
+    padding: 0 !important;
+    margin: 0 !important;
   }
-  .modal-close-btn, .resume-actions-bar { display: none !important; }
+
   .resume-modal-container {
-    background: #fff !important;
-    color: #000 !important;
+    background: #ffffff !important;
+    color: #0f172a !important;
     border: none !important;
     padding: 0 !important;
+    margin: 0 !important;
+    box-shadow: none !important;
   }
-  .resume-name, .resume-item-title { color: #000 !important; }
-  .resume-title-role, .resume-item-sub, .resume-section-heading, .resume-skill-cat strong { color: #0284c7 !important; }
-  .resume-summary-text, .resume-bullet-list li, .resume-contact-row, .resume-skill-cat p { color: #334155 !important; }
+
+  /* Executive Header in Print */
+  .resume-header {
+    border-bottom: 2pt solid #0284c7 !important;
+    padding-bottom: 0.8rem !important;
+    margin-bottom: 1rem !important;
+  }
+
+  .resume-name {
+    color: #0f172a !important;
+    font-size: 22pt !important;
+    font-weight: 800 !important;
+    letter-spacing: -0.5px !important;
+    line-height: 1.1 !important;
+    margin-bottom: 0.2rem !important;
+  }
+
+  .resume-title-role {
+    color: #0284c7 !important;
+    font-size: 10pt !important;
+    font-weight: 700 !important;
+    letter-spacing: 1px !important;
+    text-transform: uppercase !important;
+    margin-bottom: 0.5rem !important;
+  }
+
+  .resume-contact-row {
+    color: #475569 !important;
+    font-size: 8.5pt !important;
+    display: flex !important;
+    gap: 1rem !important;
+    flex-wrap: wrap !important;
+    margin-top: 0.4rem !important;
+  }
+
+  .resume-contact-row span, .resume-contact-row a {
+    color: #475569 !important;
+    text-decoration: none !important;
+    font-weight: 500 !important;
+  }
+
+  /* Sections in Print */
+  .resume-section {
+    margin-bottom: 1rem !important;
+    page-break-inside: avoid !important;
+    break-inside: avoid !important;
+  }
+
+  .resume-section-heading {
+    color: #0284c7 !important;
+    font-size: 11pt !important;
+    font-weight: 800 !important;
+    text-transform: uppercase !important;
+    letter-spacing: 0.8px !important;
+    border-bottom: 1pt solid #cbd5e1 !important;
+    padding-bottom: 0.25rem !important;
+    margin-bottom: 0.6rem !important;
+    display: flex !important;
+    align-items: center !important;
+    gap: 0.4rem !important;
+  }
+
+  .resume-section-heading svg {
+    color: #0284c7 !important;
+    width: 14px !important;
+    height: 14px !important;
+  }
+
+  .resume-summary-text {
+    color: #334155 !important;
+    font-size: 9pt !important;
+    line-height: 1.5 !important;
+  }
+
+  .resume-item {
+    margin-bottom: 0.8rem !important;
+    page-break-inside: avoid !important;
+    break-inside: avoid !important;
+  }
+
+  .resume-item-title {
+    color: #0f172a !important;
+    font-size: 10pt !important;
+    font-weight: 700 !important;
+  }
+
+  .resume-item-sub {
+    color: #0369a1 !important;
+    font-size: 9pt !important;
+    font-weight: 600 !important;
+  }
+
+  .resume-item-date {
+    color: #64748b !important;
+    font-size: 8.5pt !important;
+    font-weight: 600 !important;
+  }
+
+  .resume-bullet-list {
+    padding-left: 1rem !important;
+    margin-top: 0.3rem !important;
+    gap: 0.25rem !important;
+  }
+
+  .resume-bullet-list li {
+    color: #334155 !important;
+    font-size: 8.8pt !important;
+    line-height: 1.4 !important;
+  }
+
+  .resume-skills-block {
+    display: grid !important;
+    grid-template-columns: repeat(2, 1fr) !important;
+    gap: 0.6rem !important;
+    page-break-inside: avoid !important;
+    break-inside: avoid !important;
+  }
+
+  .resume-skill-cat {
+    background: #f8fafc !important;
+    border: 1pt solid #e2e8f0 !important;
+    padding: 0.5rem 0.7rem !important;
+    border-radius: 4px !important;
+    page-break-inside: avoid !important;
+    break-inside: avoid !important;
+  }
+
+  .resume-skill-cat strong {
+    color: #0369a1 !important;
+    font-size: 8.5pt !important;
+    display: block !important;
+    margin-bottom: 0.15rem !important;
+  }
+
+  .resume-skill-cat p {
+    color: #334155 !important;
+    font-size: 8pt !important;
+    margin: 0 !important;
+  }
+
+  /* Print Footer Signature */
+  .resume-print-footer {
+    display: block !important;
+    margin-top: 1.2rem !important;
+    padding-top: 0.6rem !important;
+    border-top: 1pt solid #cbd5e1 !important;
+    color: #64748b !important;
+    font-size: 7.5pt !important;
+    text-align: center !important;
+    page-break-inside: avoid !important;
+    break-inside: avoid !important;
+  }
+
+  .resume-print-footer span {
+    margin: 0 0.5rem !important;
+  }
 }
+
