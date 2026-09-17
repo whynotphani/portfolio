@@ -1527,12 +1527,18 @@ body {
     grid-template-columns: repeat(2, 1fr) !important;
     gap: 0.5rem !important;
     padding: 0.75rem !important;
+    width: 100% !important;
+    max-width: 100% !important;
+    box-sizing: border-box !important;
   }
   .stat-divider { display: none; }
   .hero-chips {
     display: grid !important;
     grid-template-columns: repeat(2, 1fr) !important;
     gap: 0.35rem !important;
+    width: 100% !important;
+    max-width: 100% !important;
+    box-sizing: border-box !important;
   }
   .hero-chips .chip { font-size: 0.74rem; padding: 0.35rem 0.55rem; min-height: 36px; }
   
@@ -1542,76 +1548,182 @@ body {
   .section-padding { padding: 2.5rem 0.75rem; }
   .section-title { font-size: 1.5rem; }
 
-  /* 2-Column Mobile Grids across site */
+  /* 1. Projects Section Mobile Optimization */
   .projects-grid {
     display: grid !important;
     grid-template-columns: repeat(2, 1fr) !important;
     gap: 0.65rem !important;
+    width: 100% !important;
+    max-width: 100% !important;
   }
 
   .project-card {
-    padding: 0.75rem !important;
+    padding: 0.65rem !important;
     display: flex !important;
     flex-direction: column !important;
     justify-content: space-between !important;
+    width: 100% !important;
+    box-sizing: border-box !important;
+    max-width: 100% !important;
   }
 
-  .project-card-image, .cert-preview-wrapper {
-    height: 110px !important;
+  .project-card-image, .card-image-wrapper {
+    height: 105px !important;
+    width: 100% !important;
     object-fit: cover !important;
     border-radius: var(--radius-sm) !important;
+    position: relative !important;
+    overflow: hidden !important;
+  }
+
+  /* Force project image overlay options to be 100% visible and aligned */
+  .card-overlay {
+    position: absolute !important;
+    top: 0.35rem !important;
+    left: 0.35rem !important;
+    right: 0.35rem !important;
+    display: flex !important;
+    justify-content: space-between !important;
+    align-items: center !important;
+    gap: 0.25rem !important;
+    z-index: 10 !important;
+    opacity: 1 !important;
+    visibility: visible !important;
+  }
+
+  .card-overlay .badge {
+    font-size: 0.62rem !important;
+    padding: 0.2rem 0.4rem !important;
+    max-width: 48% !important;
+    white-space: nowrap !important;
+    overflow: hidden !important;
+    text-overflow: ellipsis !important;
+  }
+
+  .card-body {
+    padding: 0.65rem 0.4rem 0.4rem 0.4rem !important;
   }
 
   .project-card .card-title {
-    font-size: 0.88rem !important;
+    font-size: 0.84rem !important;
     line-height: 1.25 !important;
   }
 
-  .project-card .card-desc {
-    font-size: 0.76rem !important;
+  .project-card .card-desc, .project-card .card-text {
+    font-size: 0.74rem !important;
     line-height: 1.35 !important;
+    margin-bottom: 0.5rem !important;
+    display: -webkit-box !important;
+    -webkit-line-clamp: 2 !important;
+    -webkit-box-orient: vertical !important;
+    overflow: hidden !important;
   }
 
-  .education-grid {
-    display: grid !important;
-    grid-template-columns: repeat(2, 1fr) !important;
-    gap: 0.65rem !important;
-  }
-
-  .education-card {
-    padding: 0.75rem !important;
-  }
-
+  /* 2. Certificates Section Mobile Optimization */
   .certificates-grid {
     display: grid !important;
     grid-template-columns: repeat(2, 1fr) !important;
     gap: 0.65rem !important;
+    width: 100% !important;
+    max-width: 100% !important;
   }
 
   .certificate-card {
-    padding: 0.6rem !important;
+    padding: 0.65rem !important;
+    width: 100% !important;
+    box-sizing: border-box !important;
   }
 
-  .professional-skills-grid {
-    display: grid !important;
-    grid-template-columns: repeat(2, 1fr) !important;
-    gap: 0.55rem !important;
+  .cert-preview-wrapper, .cert-image-wrapper {
+    height: 105px !important;
+    width: 100% !important;
+    object-fit: cover !important;
+    position: relative !important;
+    overflow: hidden !important;
   }
 
-  .skill-category-card {
-    padding: 0.7rem !important;
+  .cert-badge, .certificate-card .badge {
+    font-size: 0.62rem !important;
+    padding: 0.2rem 0.4rem !important;
+    max-width: 48% !important;
+    white-space: nowrap !important;
+    overflow: hidden !important;
+    text-overflow: ellipsis !important;
+  }
+
+  .certificate-card .card-title {
+    font-size: 0.84rem !important;
+    line-height: 1.25 !important;
+  }
+
+  .certificate-card .card-desc, .certificate-card p {
+    font-size: 0.74rem !important;
+    line-height: 1.35 !important;
+    display: -webkit-box !important;
+    -webkit-line-clamp: 2 !important;
+    -webkit-box-orient: vertical !important;
+    overflow: hidden !important;
+  }
+
+  /* 3. Education ("Study Option") - Convert into Clean Vertical List */
+  .education-grid {
+    display: flex !important;
+    flex-direction: column !important;
+    gap: 0.75rem !important;
+    width: 100% !important;
+    max-width: 100% !important;
+  }
+
+  .education-card {
+    width: 100% !important;
+    box-sizing: border-box !important;
+    padding: 0.85rem 1rem !important;
+    display: flex !important;
+    flex-direction: column !important;
+    border-left: 3px solid var(--accent-cyan) !important;
+    border-radius: var(--radius-sm) !important;
+    background: var(--bg-card) !important;
+  }
+
+  /* 4. Skills Section Mobile Optimization - Prevent Right Side Box Overflow */
+  .professional-skills-grid, .skills-grid {
+    display: flex !important;
+    flex-direction: column !important;
+    gap: 0.65rem !important;
+    width: 100% !important;
+    max-width: 100% !important;
+    box-sizing: border-box !important;
+    overflow-x: hidden !important;
+  }
+
+  .skill-category-card, .metric-card, .skills-card {
+    width: 100% !important;
+    max-width: 100% !important;
+    box-sizing: border-box !important;
+    padding: 0.85rem 1rem !important;
+    margin: 0 !important;
+    overflow: hidden !important;
   }
 
   .skills-metrics-bar {
-    display: grid !important;
-    grid-template-columns: repeat(2, 1fr) !important;
+    display: flex !important;
+    flex-direction: column !important;
     gap: 0.55rem !important;
+    width: 100% !important;
+    max-width: 100% !important;
+    box-sizing: border-box !important;
+  }
+
+  .progress-bar, .skill-progress-track {
+    width: 100% !important;
+    max-width: 100% !important;
+    box-sizing: border-box !important;
   }
 
   .card-footer {
     flex-direction: column !important;
     gap: 0.35rem !important;
-    margin-top: 0.6rem !important;
+    margin-top: 0.5rem !important;
   }
 
   .card-footer .btn {
@@ -1623,7 +1735,7 @@ body {
   }
 
   /* Horizontal Smooth Scroll Tabs on Mobile */
-  .skills-tab-bar, .cert-filter-bar {
+  .skills-tab-bar, .cert-filter-bar, .filter-bar {
     display: flex !important;
     overflow-x: auto !important;
     white-space: nowrap !important;
@@ -1631,28 +1743,12 @@ body {
     padding-bottom: 0.4rem !important;
     scrollbar-width: none !important;
     -webkit-overflow-scrolling: touch !important;
+    width: 100% !important;
+    max-width: 100% !important;
   }
 
-  .skills-tab-bar::-webkit-scrollbar, .cert-filter-bar::-webkit-scrollbar {
+  .skills-tab-bar::-webkit-scrollbar, .cert-filter-bar::-webkit-scrollbar, .filter-bar::-webkit-scrollbar {
     display: none !important;
-  }
-
-  /* Terminal Console Mobile Scaling */
-  .terminal-card {
-    border-radius: var(--radius-sm) !important;
-  }
-
-  #terminal-output {
-    max-height: 240px !important;
-    font-size: 0.78rem !important;
-  }
-
-  .term-quick-chips {
-    display: flex !important;
-    overflow-x: auto !important;
-    gap: 0.35rem !important;
-    white-space: nowrap !important;
-    padding-bottom: 0.3rem !important;
   }
 
   .terminal-input-wrap input,
@@ -1661,7 +1757,7 @@ body {
   #cert-search-input,
   input[type="text"],
   input[type="search"] {
-    font-size: 16px !important; /* Prevents auto zoom on mobile browsers */
+    font-size: 16px !important;
   }
 
   /* View Resume Modal Mobile Optimization */
@@ -1678,45 +1774,15 @@ body {
     gap: 0.5rem !important;
   }
 
-  .resume-name {
-    font-size: 1.2rem !important;
-  }
-
-  .resume-title-role {
-    font-size: 0.72rem !important;
-  }
-
-  .resume-contact-row {
-    font-size: 0.68rem !important;
-    gap: 0.35rem !important;
-  }
-
-  .resume-section-heading {
-    font-size: 0.78rem !important;
-    padding-bottom: 0.12rem !important;
-    margin-bottom: 0.25rem !important;
-  }
-
-  .resume-summary-text, .resume-bullet-list li, .resume-skill-cat p {
-    font-size: 0.7rem !important;
-    line-height: 1.3 !important;
-  }
-
-  .resume-item-title {
-    font-size: 0.78rem !important;
-  }
-
-  .resume-item-sub, .resume-item-date {
-    font-size: 0.68rem !important;
-  }
-
-  .resume-skill-cat {
-    padding: 0.25rem 0.4rem !important;
-  }
-
-  .resume-skill-cat strong {
-    font-size: 0.72rem !important;
-  }
+  .resume-name { font-size: 1.2rem !important; }
+  .resume-title-role { font-size: 0.72rem !important; }
+  .resume-contact-row { font-size: 0.68rem !important; gap: 0.35rem !important; }
+  .resume-section-heading { font-size: 0.78rem !important; padding-bottom: 0.12rem !important; margin-bottom: 0.25rem !important; }
+  .resume-summary-text, .resume-bullet-list li, .resume-skill-cat p { font-size: 0.7rem !important; line-height: 1.3 !important; }
+  .resume-item-title { font-size: 0.78rem !important; }
+  .resume-item-sub, .resume-item-date { font-size: 0.68rem !important; }
+  .resume-skill-cat { padding: 0.25rem 0.4rem !important; }
+  .resume-skill-cat strong { font-size: 0.72rem !important; }
 }
 
 /* Extra Small Phones (< 480px) */
