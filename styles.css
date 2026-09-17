@@ -1555,6 +1555,7 @@ body {
     gap: 0.65rem !important;
     width: 100% !important;
     max-width: 100% !important;
+    align-items: stretch !important;
   }
 
   .project-card {
@@ -1565,6 +1566,7 @@ body {
     width: 100% !important;
     box-sizing: border-box !important;
     max-width: 100% !important;
+    height: 100% !important;
   }
 
   .project-card-image, .card-image-wrapper {
@@ -1574,6 +1576,7 @@ body {
     border-radius: var(--radius-sm) !important;
     position: relative !important;
     overflow: hidden !important;
+    flex-shrink: 0 !important;
   }
 
   /* Force project image overlay options to be 100% visible and aligned */
@@ -1583,40 +1586,90 @@ body {
     left: 0.35rem !important;
     right: 0.35rem !important;
     display: flex !important;
+    flex-direction: row !important;
     justify-content: space-between !important;
     align-items: center !important;
-    gap: 0.25rem !important;
+    gap: 0.2rem !important;
     z-index: 10 !important;
     opacity: 1 !important;
     visibility: visible !important;
+    pointer-events: none !important;
   }
 
-  .card-overlay .badge {
-    font-size: 0.62rem !important;
-    padding: 0.2rem 0.4rem !important;
+  .card-overlay .badge, .cert-badge, .certificate-card .badge {
+    font-size: 0.58rem !important;
+    padding: 0.15rem 0.35rem !important;
     max-width: 48% !important;
     white-space: nowrap !important;
     overflow: hidden !important;
     text-overflow: ellipsis !important;
+    display: inline-flex !important;
+    align-items: center !important;
+    gap: 0.2rem !important;
+    box-sizing: border-box !important;
+    pointer-events: auto !important;
+  }
+
+  .card-overlay .badge svg, .card-overlay .badge i, .card-overlay [data-lucide] {
+    width: 10px !important;
+    height: 10px !important;
+    flex-shrink: 0 !important;
   }
 
   .card-body {
-    padding: 0.65rem 0.4rem 0.4rem 0.4rem !important;
+    padding: 0.55rem 0.3rem 0.3rem 0.3rem !important;
+    display: flex !important;
+    flex-direction: column !important;
+    flex: 1 1 auto !important;
+    justify-content: space-between !important;
+  }
+
+  .card-header-meta {
+    margin-bottom: 0.35rem !important;
   }
 
   .project-card .card-title {
-    font-size: 0.84rem !important;
+    font-size: 0.82rem !important;
     line-height: 1.25 !important;
-  }
-
-  .project-card .card-desc, .project-card .card-text {
-    font-size: 0.74rem !important;
-    line-height: 1.35 !important;
-    margin-bottom: 0.5rem !important;
+    margin-bottom: 0.2rem !important;
     display: -webkit-box !important;
     -webkit-line-clamp: 2 !important;
     -webkit-box-orient: vertical !important;
     overflow: hidden !important;
+    min-height: 2.1rem !important;
+  }
+
+  .project-card .card-desc, .project-card .card-text {
+    font-size: 0.72rem !important;
+    line-height: 1.35 !important;
+    margin-bottom: 0.4rem !important;
+    display: -webkit-box !important;
+    -webkit-line-clamp: 2 !important;
+    -webkit-box-orient: vertical !important;
+    overflow: hidden !important;
+    height: 2.7em !important;
+  }
+
+  .tech-tags {
+    display: flex !important;
+    flex-wrap: nowrap !important;
+    overflow-x: auto !important;
+    gap: 0.25rem !important;
+    margin-bottom: 0.5rem !important;
+    padding-bottom: 0.2rem !important;
+    scrollbar-width: none !important;
+    -webkit-overflow-scrolling: touch !important;
+  }
+
+  .tech-tags::-webkit-scrollbar {
+    display: none !important;
+  }
+
+  .tech-tags .tag {
+    font-size: 0.62rem !important;
+    padding: 0.15rem 0.35rem !important;
+    white-space: nowrap !important;
+    flex-shrink: 0 !important;
   }
 
   /* 2. Certificates Section Mobile Optimization */
@@ -1626,12 +1679,17 @@ body {
     gap: 0.65rem !important;
     width: 100% !important;
     max-width: 100% !important;
+    align-items: stretch !important;
   }
 
-  .certificate-card {
+  .certificate-card, .cert-card-item {
     padding: 0.65rem !important;
     width: 100% !important;
     box-sizing: border-box !important;
+    display: flex !important;
+    flex-direction: column !important;
+    justify-content: space-between !important;
+    height: 100% !important;
   }
 
   .cert-preview-wrapper, .cert-image-wrapper {
@@ -1640,29 +1698,28 @@ body {
     object-fit: cover !important;
     position: relative !important;
     overflow: hidden !important;
-  }
-
-  .cert-badge, .certificate-card .badge {
-    font-size: 0.62rem !important;
-    padding: 0.2rem 0.4rem !important;
-    max-width: 48% !important;
-    white-space: nowrap !important;
-    overflow: hidden !important;
-    text-overflow: ellipsis !important;
+    flex-shrink: 0 !important;
   }
 
   .certificate-card .card-title {
-    font-size: 0.84rem !important;
+    font-size: 0.82rem !important;
     line-height: 1.25 !important;
+    margin-bottom: 0.2rem !important;
+    display: -webkit-box !important;
+    -webkit-line-clamp: 2 !important;
+    -webkit-box-orient: vertical !important;
+    overflow: hidden !important;
+    min-height: 2.1rem !important;
   }
 
   .certificate-card .card-desc, .certificate-card p {
-    font-size: 0.74rem !important;
+    font-size: 0.72rem !important;
     line-height: 1.35 !important;
     display: -webkit-box !important;
     -webkit-line-clamp: 2 !important;
     -webkit-box-orient: vertical !important;
     overflow: hidden !important;
+    height: 2.7em !important;
   }
 
   /* 3. Education ("Study Option") - Convert into Clean Vertical List */
@@ -1674,7 +1731,7 @@ body {
     max-width: 100% !important;
   }
 
-  .education-card {
+  .edu-card, .education-card {
     width: 100% !important;
     box-sizing: border-box !important;
     padding: 0.85rem 1rem !important;
@@ -1721,9 +1778,11 @@ body {
   }
 
   .card-footer {
+    display: flex !important;
     flex-direction: column !important;
     gap: 0.35rem !important;
-    margin-top: 0.5rem !important;
+    margin-top: auto !important;
+    width: 100% !important;
   }
 
   .card-footer .btn {
@@ -1731,7 +1790,7 @@ body {
     justify-content: center !important;
     font-size: 0.74rem !important;
     padding: 0.35rem 0.5rem !important;
-    min-height: 36px !important;
+    min-height: 34px !important;
   }
 
   /* Horizontal Smooth Scroll Tabs on Mobile */
