@@ -1200,24 +1200,15 @@ body {
   background: #0b0f19;
   border: 1px solid var(--border-glow);
   border-radius: var(--radius-lg);
-  max-width: 980px;
-  width: 95%;
-  max-height: 94vh;
+  max-width: 900px;
+  width: 94%;
+  max-height: 90vh;
   position: relative;
   box-shadow: 0 25px 60px rgba(0, 0, 0, 0.8), 0 0 40px rgba(56, 189, 248, 0.2);
   transform: scale(0.95);
   transition: var(--transition-smooth);
-  scrollbar-width: none !important;
-  -ms-overflow-style: none !important;
-}
-
-.modal-box::-webkit-scrollbar,
-.modal-body::-webkit-scrollbar,
-.resume-modal-container::-webkit-scrollbar,
-#printable-resume::-webkit-scrollbar {
-  display: none !important;
-  width: 0 !important;
-  height: 0 !important;
+  overflow-y: auto !important;
+  overflow-x: hidden !important;
 }
 
 .modal-backdrop.active .modal-box {
@@ -1248,8 +1239,75 @@ body {
 }
 
 .modal-body {
-  padding: 1.5rem 1.2rem;
-  scrollbar-width: none !important;
+  padding: 1.8rem 1.5rem;
+  max-width: 100%;
+  box-sizing: border-box;
+}
+
+/* Project Details Modal Content Styling */
+.modal-img {
+  width: 100% !important;
+  max-width: 100% !important;
+  height: auto !important;
+  max-height: 480px !important;
+  object-fit: cover !important;
+  object-position: top center !important;
+  border-radius: var(--radius-md) !important;
+  border: 1px solid var(--border-glow) !important;
+  margin-bottom: 1.2rem !important;
+  box-shadow: 0 10px 30px rgba(0, 0, 0, 0.6) !important;
+  display: block !important;
+}
+
+.modal-h2 {
+  font-size: 1.6rem;
+  font-weight: 700;
+  color: #fff;
+  margin-bottom: 0.3rem;
+}
+
+.modal-subtitle {
+  font-family: var(--font-mono);
+  font-size: 0.88rem;
+  color: var(--accent-cyan);
+  margin-bottom: 1rem;
+  display: flex;
+  align-items: center;
+  gap: 0.4rem;
+}
+
+.modal-desc {
+  font-size: 0.95rem;
+  line-height: 1.6;
+  color: var(--text-secondary);
+  margin-bottom: 1.5rem;
+}
+
+.modal-feature-list {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(260px, 1fr));
+  gap: 1rem;
+  margin-bottom: 1.5rem;
+}
+
+.feature-item {
+  background: rgba(255, 255, 255, 0.03);
+  border: 1px solid var(--border-color);
+  border-radius: var(--radius-sm);
+  padding: 0.85rem 1rem;
+}
+
+.feature-item h4 {
+  font-size: 0.9rem;
+  font-weight: 600;
+  color: var(--accent-cyan);
+  margin-bottom: 0.3rem;
+}
+
+.feature-item p {
+  font-size: 0.84rem;
+  color: var(--text-secondary);
+  line-height: 1.45;
 }
 
 /* EXECUTIVE SINGLE-PAGE PORTFOLIO MODAL STYLES */
