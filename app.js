@@ -450,55 +450,216 @@ document.addEventListener('DOMContentLoaded', () => {
     }
   };
 
-  // Dedicated "View Portfolio Resume" Modal Function
+  // EXECUTIVE RESUME DOCUMENT MODAL FUNCTION
   const openFullPortfolioModal = () => {
     modalContainer.innerHTML = `
-      <div style="text-align: center; margin-bottom: 1.5rem;">
-        <div style="width: 56px; height: 56px; border-radius: 50%; background: linear-gradient(135deg, rgba(56, 189, 248, 0.2), rgba(168, 85, 247, 0.2)); border: 1px solid var(--border-glow); display: inline-flex; align-items: center; justify-content: center; color: var(--accent-cyan); margin-bottom: 0.8rem;">
-          <i data-lucide="shield-alert" style="width: 28px; height: 28px;"></i>
-        </div>
-        <h2 class="modal-h2">MARPU PHANINDRA</h2>
-        <div class="modal-subtitle">Computer Science Student • Cybersecurity, IoT & Blockchain Specialist</div>
-        <p style="color: var(--text-secondary); font-size: 0.9rem;">Visakhapatnam, India • +91 8121088558 • marpuphani00@gmail.com</p>
+      <div class="resume-actions-bar">
+        <button class="btn btn-gradient btn-sm" id="print-resume-btn">
+          <i data-lucide="printer"></i> Print / Download PDF Resume
+        </button>
+        <button class="btn btn-outline btn-sm" id="copy-resume-text-btn">
+          <i data-lucide="copy"></i> Copy Resume Text
+        </button>
       </div>
 
-      <div class="modal-feature-list" style="margin-bottom: 1.5rem;">
-        <div class="feature-item">
-          <h4>Education</h4>
-          <p><strong>MVGR College</strong> — B.Tech CS (GPA: 6.84)</p>
-          <p>Specialization: IoT, Cybersecurity & Blockchain</p>
-        </div>
-        <div class="feature-item">
-          <h4>Professional Experience</h4>
-          <p><strong>Netmaxin Group & Foundation</strong> — QA Tester & Tech Lead</p>
-          <p>Platform QA testing, intern evaluations, apparel design (Elyqra Muse)</p>
-        </div>
-        <div class="feature-item">
-          <h4>Core Projects</h4>
-          <p>• Wi-Fi CSI 3D Environment Scanner (IoT)</p>
-          <p>• Cyber Crime Reporting Portal (1930 Helpline Integration)</p>
-          <p>• ShuttleTrack Live Bus Tracker (Leaflet GIS)</p>
-        </div>
-        <div class="feature-item">
-          <h4>Certifications & Credentials</h4>
-          <p>• Cybercrime Police Station Internship</p>
-          <p>• Cisco Junior Cybersecurity Analyst</p>
-          <p>• Cisco Packet Tracer & Networking</p>
-        </div>
-      </div>
+      <div class="resume-modal-container" id="printable-resume">
+        <!-- Resume Header -->
+        <header class="resume-header">
+          <h1 class="resume-name">MARPU PHANINDRA</h1>
+          <p class="resume-title-role">COMPUTER SCIENCE STUDENT & SECURITY RESEARCHER</p>
+          <div class="resume-contact-row">
+            <span><i data-lucide="map-pin"></i> Visakhapatnam, India</span>
+            <a href="tel:+918121088558"><i data-lucide="phone"></i> +91 8121088558</a>
+            <a href="mailto:marpuphani00@gmail.com"><i data-lucide="mail"></i> marpuphani00@gmail.com</a>
+            <a href="https://github.com/whynotphani" target="_blank"><i data-lucide="github"></i> github.com/whynotphani</a>
+          </div>
+        </header>
 
-      <div style="display: flex; gap: 0.8rem; flex-wrap: wrap; justify-content: center;">
-        <a href="mailto:marpuphani00@gmail.com" class="btn btn-primary btn-lg w-100-mobile">
-          <i data-lucide="mail"></i> Contact Marpu Phanindra
-        </a>
-        <a href="https://github.com/whynotphani" target="_blank" rel="noopener" class="btn btn-glass btn-lg w-100-mobile">
-          <i data-lucide="github"></i> View GitHub Profile
-        </a>
+        <!-- Summary -->
+        <section class="resume-section">
+          <h2 class="resume-section-heading"><i data-lucide="user"></i> Professional Summary</h2>
+          <p class="resume-summary-text">
+            Tech-driven Computer Science student specializing in <strong>Cybersecurity, IoT, and Blockchain</strong>, with practical development experience at NetMaxin Group and leadership experience at NetMaxin Foundation. Adept in modern software development and engineering best practices, focused on delivering reliable, user-focused applications.
+          </p>
+        </section>
+
+        <!-- Education -->
+        <section class="resume-section">
+          <h2 class="resume-section-heading"><i data-lucide="graduation-cap"></i> Education</h2>
+          
+          <div class="resume-item">
+            <div class="resume-item-top">
+              <span class="resume-item-title">MVGR College</span>
+              <span class="resume-item-date">2023 — Present</span>
+            </div>
+            <div class="resume-item-sub">Bachelor of Technology — Computer Science (GPA: 6.84)</div>
+            <p style="font-size: 0.88rem; color: var(--text-secondary); margin-top: 0.2rem;">Specialization: IoT, Cybersecurity & Blockchain Technology</p>
+          </div>
+
+          <div class="resume-item">
+            <div class="resume-item-top">
+              <span class="resume-item-title">Sri Viswa IIT and Medical Academy</span>
+              <span class="resume-item-date">2021 — 2023</span>
+            </div>
+            <div class="resume-item-sub">Class 12 (MPC) — Score: 89.7%</div>
+          </div>
+
+          <div class="resume-item">
+            <div class="resume-item-top">
+              <span class="resume-item-title">Chalapathi Public School Gajuwaka</span>
+              <span class="resume-item-date">2020 — 2021</span>
+            </div>
+            <div class="resume-item-sub">Class 10 — Score: 97.8%</div>
+          </div>
+        </section>
+
+        <!-- Experience -->
+        <section class="resume-section">
+          <h2 class="resume-section-heading"><i data-lucide="briefcase"></i> Professional Experience</h2>
+          
+          <div class="resume-item">
+            <div class="resume-item-top">
+              <span class="resume-item-title">Netmaxin Group & NetMaxin Foundation</span>
+              <span class="resume-item-date">2023 — Present</span>
+            </div>
+            <div class="resume-item-sub">QA Tester & Technical Assessment Lead</div>
+            <ul class="resume-bullet-list">
+              <li>Conducted QA testing across platforms and generated detailed technical bug reports to streamline bug fixes.</li>
+              <li>Evaluated intern technical submissions and authored structured performance and progress assessment reports.</li>
+              <li>Conceptualized creative apparel graphic designs and produced high-fidelity mockups for Elyqra Muse.</li>
+            </ul>
+          </div>
+        </section>
+
+        <!-- Projects -->
+        <section class="resume-section">
+          <h2 class="resume-section-heading"><i data-lucide="boxes"></i> Key Projects</h2>
+          
+          <div class="resume-item">
+            <div class="resume-item-title">Wi-Fi CSI Based 3D Environment Scanner <span style="font-weight: normal; font-size: 0.85rem; color: var(--accent-cyan);">(IoT Sensing System)</span></div>
+            <p style="font-size: 0.88rem; color: var(--text-secondary); margin-top: 0.2rem;">
+              An IoT sensing system extracting Wi-Fi (CSI) across subcarriers to map indoor environments and detect physical obstacles without cameras.
+            </p>
+          </div>
+
+          <div class="resume-item">
+            <div class="resume-item-title">Cyber Crime Reporting & Management Portal <span style="font-weight: normal; font-size: 0.85rem; color: var(--accent-cyan);">(Fullstack Dual-Portal)</span></div>
+            <p style="font-size: 0.88rem; color: var(--text-secondary); margin-top: 0.2rem;">
+              Developed a streamlined dual-portal system integrating 1930 helpline registration to enable direct citizen case reporting and real-time expert case evaluation.
+            </p>
+          </div>
+
+          <div class="resume-item">
+            <div class="resume-item-title">ShuttleTrack – Live Bus Tracking System <span style="font-weight: normal; font-size: 0.85rem; color: var(--accent-cyan);">(GPS Fleet Telemetry)</span></div>
+            <p style="font-size: 0.88rem; color: var(--text-secondary); margin-top: 0.2rem;">
+              Developed a real-time bus tracking system enabling students to monitor college transport location and arrival times on Leaflet GIS maps.
+            </p>
+          </div>
+        </section>
+
+        <!-- Technical Skills -->
+        <section class="resume-section">
+          <h2 class="resume-section-heading"><i data-lucide="code-2"></i> Technical Skills Matrix</h2>
+          <div class="resume-skills-block">
+            <div class="resume-skill-cat">
+              <strong>Programming Languages</strong>
+              <p>C, C++, JavaScript (ES6+), Java, Python</p>
+            </div>
+            <div class="resume-skill-cat">
+              <strong>Web Development</strong>
+              <p>React.js, Next.js, HTML5, CSS3, Tailwind CSS, Node.js, FastAPI</p>
+            </div>
+            <div class="resume-skill-cat">
+              <strong>Cybersecurity & Specializations</strong>
+              <p>Penetration Testing, Bug Hunting, IoT Wi-Fi CSI, Blockchain Basics</p>
+            </div>
+            <div class="resume-skill-cat">
+              <strong>Core CS Concepts</strong>
+              <p>Data Structures & Algorithms, OOP, DBMS/MongoDB, OS, Computer Networks</p>
+            </div>
+            <div class="resume-skill-cat" style="grid-column: 1 / -1;">
+              <strong>Developer Tools & Software</strong>
+              <p>VS Code, Antigravity IDE, GitHub, Android Studio, Figma, Canva, AutoCAD, Blender</p>
+            </div>
+          </div>
+        </section>
+
+        <!-- Certifications -->
+        <section class="resume-section" style="margin-bottom: 0;">
+          <h2 class="resume-section-heading"><i data-lucide="award"></i> Verified Certifications</h2>
+          <ul class="resume-bullet-list" style="display: grid; grid-template-columns: repeat(auto-fit, minmax(280px, 1fr)); gap: 0.5rem;">
+            <li><strong>Cybercrime Internship</strong> — Cybercrime Police Station</li>
+            <li><strong>Junior Cybersecurity Analyst</strong> — Cisco Networking Academy</li>
+            <li><strong>Cisco Packet Tracer</strong> — Cisco Networking Academy</li>
+            <li><strong>Exploring Networking</strong> — Cisco Networking Academy</li>
+            <li><strong>Introduction to Cybersecurity</strong> — Netmaxin Program</li>
+            <li><strong>C Programming Certification</strong> — Netmaxin Academy</li>
+            <li><strong>AI / ML Certification</strong> — Netmaxin Academy</li>
+          </ul>
+        </section>
       </div>
     `;
 
     if (window.lucide) window.lucide.createIcons();
     modal.classList.add('active');
+
+    // Print Button Handler
+    const printBtn = modalContainer.querySelector('#print-resume-btn');
+    if (printBtn) {
+      printBtn.addEventListener('click', () => {
+        window.print();
+      });
+    }
+
+    // Copy Resume Text Handler
+    const copyTextBtn = modalContainer.querySelector('#copy-resume-text-btn');
+    if (copyTextBtn) {
+      copyTextBtn.addEventListener('click', () => {
+        const plainText = `
+MARPU PHANINDRA
+Computer Science Student & Security Researcher
+Visakhapatnam, India | +91 8121088558 | marpuphani00@gmail.com | github.com/whynotphani
+
+SUMMARY
+Tech-driven Computer Science student specializing in Cybersecurity, IoT, and Blockchain, with practical development experience at NetMaxin Group and leadership experience at NetMaxin Foundation.
+
+EDUCATION
+- MVGR College - B.Tech Computer Science (GPA: 6.84, 2023-Present)
+  Specialization: IoT, Cybersecurity & Blockchain Technology
+- Sri Viswa IIT and Medical Academy - Class 12 MPC (89.7%, 2021-2023)
+- Chalapathi Public School Gajuwaka - Class 10 (97.8%, 2020-2021)
+
+EXPERIENCE
+- Netmaxin Group - QA Tester & Technical Assessment Lead (2023-Present)
+
+PROJECTS
+- Wi-Fi CSI Based 3D Environment Scanner
+- Cyber Crime Reporting & Management Portal
+- ShuttleTrack - Live Bus Tracking System
+
+SKILLS
+Programming Languages: C, C++, JavaScript, Java, Python
+Web Development: React, Next.js, HTML5, CSS3, Tailwind CSS
+Cybersecurity: Penetration Testing, Bug Hunting, IoT Wi-Fi CSI Sensing, Blockchain
+Tools: Figma, Canva, GitHub, VS Code, AutoCAD, Blender, Android Studio, Antigravity IDE
+
+CERTIFICATIONS
+- Cybercrime Internship: Cybercrime Police Station
+- Cybersecurity Analyst: Cisco Networking Academy
+- Cisco Packet Tracer: Cisco Networking Academy
+- Exploring Networking: Cisco Networking Academy
+- Introduction to Cybersecurity: Netmaxin Academy
+- C Programming & AI/ML: Netmaxin Academy
+        `.trim();
+        navigator.clipboard.writeText(plainText);
+        copyTextBtn.innerHTML = `<i data-lucide="check"></i> Copied Resume Text!`;
+        if (window.lucide) window.lucide.createIcons();
+        setTimeout(() => {
+          copyTextBtn.innerHTML = `<i data-lucide="copy"></i> Copy Resume Text`;
+          if (window.lucide) window.lucide.createIcons();
+        }, 2000);
+      });
+    }
   };
 
   // View Portfolio Buttons Listeners
@@ -557,7 +718,7 @@ document.addEventListener('DOMContentLoaded', () => {
         printLine(`
           <div style="margin-top: 0.3rem;">
             <span class="term-cyan">Available Commands:</span><br>
-            • <span class="term-green">portfolio</span> - Open full portfolio modal<br>
+            • <span class="term-green">portfolio</span> - Open executive resume viewer<br>
             • <span class="term-green">resume</span> - Display summary profile of Marpu Phanindra<br>
             • <span class="term-green">list</span> - List engineering projects<br>
             • <span class="term-green">certifications</span> - Display all 7 verified certificates<br>
@@ -571,8 +732,9 @@ document.addEventListener('DOMContentLoaded', () => {
 
       case 'portfolio':
       case 'view portfolio':
+      case 'view resume':
         openFullPortfolioModal();
-        printLine(`<span class="term-green">✓ Opened full portfolio resume modal.</span>`);
+        printLine(`<span class="term-green">✓ Opened executive resume viewer modal.</span>`);
         break;
 
       case 'resume':
