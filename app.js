@@ -665,7 +665,6 @@ CERTIFICATIONS
   // View Portfolio Buttons Listeners
   const portfolioBtns = [
     document.getElementById('view-portfolio-nav-btn'),
-    document.getElementById('view-portfolio-hero-btn'),
     document.getElementById('view-portfolio-mobile-btn')
   ];
 
